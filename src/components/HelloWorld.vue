@@ -19,19 +19,20 @@
       </div>
 
       <div :class="efeito2 ? 'upForm': 'tabsWrapper'">
-        <div class="d-flex justify-space-between">
+        <div class="title_trib">
           <div class="mb-5">
             <h2>Simulador SEFAZ</h2>
             <p>Ferramenta de dados e simulação</p>
           </div>
           <div class="tabs">
-            <input type="radio" id="ipva" name="tabs" checked>
+            <input @click="tab = 1" type="radio" id="ipva" name="tabs" checked>
             <label for="ipva">IPVA</label>
-            <input type="radio" id="itcd" name="tabs">
+            <input @click="tab = 2" type="radio" id="itcd" name="tabs">
             <label for="itcd">ITCD</label>
           </div>
         </div>
-        <div class="tab-content-1">
+
+        <div class="tab-content-1" v-if="tab == 1">
           <div class="d-flex align-center">
             <v-icon>mdi-car-multiple</v-icon>
             <h2 class="mx-2">IPVA {{ anoSelect }}</h2>
@@ -51,21 +52,21 @@
           </div>
           <div class="wrapperbox">
             <div class="box">
-              <div class="d-flex align-center">
+              <div class="box-item">
                 <v-icon  size="2.5rem" class="mr-2">mdi-car</v-icon>
                 <h1>2.000.000</h1>
               </div>
               Quantidade Renavan
             </div>
             <div class="box">
-              <div class="d-flex align-center">
+              <div class="box-item">
                 <v-icon  size="2.5rem" class="mr-2">mdi-currency-usd</v-icon>
                 <h1>2.000.000</h1>
               </div>
               Potencial de Arrecadação
             </div>
             <div class="box">
-              <div class="d-flex align-center">
+              <div class="box-item">
                 <v-icon  size="2.5rem" class="mr-2">mdi-gold</v-icon>
                 <h1>2.000.000</h1>
               </div>
@@ -75,7 +76,7 @@
   
           <div class="graficWrapper">
             <div class="grafic">
-              Gráfico
+              Arrecadação
               <div class="text-center">
                 <v-progress-circular model-value="60" :size="130" :width="42" color="teal">
                   <template v-slot:default> 60 % </template>
@@ -176,6 +177,7 @@
         </div>
         <div class="tab-content-2" v-if="tab == 2">
           <h2>ITCD</h2>
+          <div class="content_itcd"></div>
         </div>
         <!-- reusultado -->
          <div class="resultado">
@@ -399,6 +401,7 @@
 .box{
   width: 33%;
   height: 100px;
+  text-align: center;
 }
 .graficWrapper{
   display: flex;
@@ -413,7 +416,7 @@
   width: 32%;
   height: 200px;
 }
-.simulador, .boxGrafics, .grafic, .box, .resultado {
+.simulador, .boxGrafics, .grafic, .box, .resultado, .content_itcd {
   padding: 1rem;
   border: 1px solid white;
 }
@@ -449,5 +452,71 @@
 .isencao-item{
   display: flex;
   align-items: center;
+}
+
+.title_trib {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 1s ease-in-out;
+}
+.box-item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content_itcd{
+  height: 50vh;
+}
+@media (max-width: 900px) {
+  .title_trib{
+    flex-direction: column;
+    align-items: start;
+    margin-right: 1rem;
+  }
+  .wrapperbox{
+    flex-direction: column;
+    margin-right: 1rem;
+  }
+  .box{
+    width: 100%;
+  }
+  .graficWrapper{
+    flex-direction: column;
+    gap: 1rem;
+    margin-right: 1rem;
+  }
+  .grafic{
+    width: 100%;
+  }
+  .boxGrafics{
+    width: 100%;
+  }
+  .simulador{
+    flex-direction: column;
+    margin-right: 1rem;
+  }
+  .resultado{
+    margin-right: 1rem;
+  }
+  .boxResultadoWrapper{
+    flex-direction: column;
+  }
+  .wrapperBoxSimulator{
+    width: 100%;
+  }
+  .formSim{
+    width: 100%;
+  }
+  .boxSimulador{
+    width: 100%;
+  }
+  .tabs{
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .content_itcd{
+    margin-right: 1rem;
+  }
 }
 </style>
