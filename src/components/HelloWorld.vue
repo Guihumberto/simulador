@@ -1,7 +1,7 @@
 <template>
   <v-container class="fill-height">
     <v-responsive
-      class="align-centerfill-height mx-auto"
+      class="align-centerfill-height mx-auto mt-10"
       max-width="900"
     >
       <div :class="efeito ? 'upDIv':''">
