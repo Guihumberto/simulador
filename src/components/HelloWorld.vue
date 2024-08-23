@@ -134,7 +134,7 @@
                   class="mr-2 w-50"
                   v-model="item.valor"
                   :rules="[rules.required]"
-                  v-mask="['###.###,##','##.####.####,##']"
+                  v-mask="['#,##', '##,##', '###,##', '#.###,##', '##.###,##', '###.###,##','##.####.####,##']"
                   clearable
                 ></v-text-field>
                 <v-text-field
@@ -162,7 +162,7 @@
                 </v-text-field>
               </div>
               <div class="text-center mt-5">
-                <v-btn block prepend-icon="mdi-calculator-variant" type="submit">CALCULAR</v-btn>
+                <v-btn block prepend-icon="mdi-calculator-variant" type="submit">INCLUIR NO CÁLCULO</v-btn>
                 <v-btn 
                   @click="clearAllParametros()" 
                   class="mt-1 text-lowercase text-overline" 
@@ -181,7 +181,7 @@
         </div>
         <!-- reusultado -->
          <div class="resultado">
-          <h3 class="mb-2">Resultado Simulação</h3>
+          <h3 class="mb-2">Resultado da Simulação</h3>
           <div class="my-5" v-if="veiculosAdds.length">
             <div v-for="tipo, t in veiculosAdds" :key="t" class="mb-5">
               {{ tipo.tipo }}
@@ -193,11 +193,12 @@
                 </li>
               </ul>
             </div>
+            <v-btn block color="teal">CALCULAR</v-btn>
           </div>
           <v-alert variant="outlined" v-else class="my-5" type="info">
             Adicione os tipos de veílcuos para iniciar a simulação
           </v-alert variant="outlined">
-          <div class="boxResultadoWrapper">
+          <div class="boxResultadoWrapper mb-5">
             <div class="boxSimulador">
               <h3>Valor Potencial da Arrecadação</h3>
             </div>
@@ -207,6 +208,9 @@
             <div class="boxSimulador">
               <h3>Aumento/Redução da Arrecadação</h3>
             </div>
+          </div>
+          <div class="text-center">
+            <v-btn class="text-lowercase">detalhar o cálculo</v-btn>
           </div>
          </div>
       </div>
@@ -311,7 +315,15 @@
       async calcularSimulacao(){
         const { valid } = await this.$refs.form.validate()
         if(valid){
-          this.veiculosAdds.push(this.tipoSelect)
+          const index = this.veiculosAdds.findIndex(item => item.id === this.tipoSelect.id);
+
+          if (index !== -1) {
+              // Substituir o objeto existente
+              this.veiculosAdds[index] = this.tipoSelect;
+          } else {
+              this.veiculosAdds.push(this.tipoSelect)
+          }
+          
         }
       },
       selectAno(tipo){
