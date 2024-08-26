@@ -4,7 +4,7 @@
       class="align-centerfill-height mx-auto mt-10"
       max-width="900"
     >
-      <div :class="efeito ? 'upDIv':''">
+      <div class="imgInit" :class="efeito ? 'upDIv':''">
         <v-img
           class="mb-4"
           height="150"
@@ -14,10 +14,16 @@
         <div class="text-center">
           <div class="text-body-2 font-weight-light mb-n1">Bem-vindo ao</div>
           <h1 class="text-h3 font-weight-bold">Simulador SEFAZ</h1>
+          <div v-if="load" class="my-5">
+            <v-progress-linear
+              color="cyan"
+              indeterminate
+            ></v-progress-linear>
+            Carregando...
+          </div>
           <v-btn @click="entrar()" class="mt-5" prepend-icon="mdi-calculator-variant">ENTRAR</v-btn>
         </div>
       </div>
-
       <div :class="efeito2 ? 'upForm': 'tabsWrapper'">
         <div class="title_trib">
           <div class="mb-5">
@@ -53,22 +59,22 @@
           <div class="wrapperbox">
             <div class="box">
               <div class="box-item">
-                <v-icon  size="2.5rem" class="mr-2">mdi-car</v-icon>
-                <h1>2.000.000</h1>
+                <v-icon  size="2.5rem" class="mr-2" color="teal">mdi-car</v-icon>
+                <h1>{{formatDecimal(qdtRenavan, 2)}}</h1>
               </div>
               Quantidade Renavan
             </div>
             <div class="box">
               <div class="box-item">
-                <v-icon  size="2.5rem" class="mr-2">mdi-currency-usd</v-icon>
-                <h1>2.000.000</h1>
+                <v-icon  size="2.5rem" class="mr-2" color="teal">mdi-cash</v-icon>
+                <h1>{{ formatDecimal(valorPontencial, 2)}}</h1>
               </div>
               Potencial de Arrecadação
             </div>
             <div class="box">
               <div class="box-item">
-                <v-icon  size="2.5rem" class="mr-2">mdi-gold</v-icon>
-                <h1>2.000.000</h1>
+                <v-icon  size="2.5rem" class="mr-2" color="teal">mdi-gold</v-icon>
+                <h1>{{ formatDecimal(valorArrecadado, 2) }}</h1>
               </div>
               Arrecadação até o momento
             </div>
@@ -78,8 +84,8 @@
             <div class="grafic">
               Arrecadação
               <div class="text-center">
-                <v-progress-circular model-value="60" :size="130" :width="42" color="teal">
-                  <template v-slot:default> 60 % </template>
+                <v-progress-circular :model-value="valorArrecadado/valorPontencial * 100" :size="140" :width="42" color="teal">
+                  <template v-slot:default> {{ valorArrecadado/valorPontencial * 100 }}% </template>
                 </v-progress-circular>
               </div>
             </div>
@@ -129,14 +135,20 @@
                   placeholder="150.000,00"
                   variant="outlined"
                   density="compact"
-                  prepend-icon="mdi-less-than-or-equal"
-                  prepend-inner-icon="mdi-currency-usd"
+             
                   class="mr-2 w-50"
                   v-model="item.valor"
                   :rules="[rules.required]"
                   v-mask="['#,##', '##,##', '###,##', '#.###,##', '##.###,##', '###.###,##','##.####.####,##']"
-                  clearable
-                ></v-text-field>
+    
+                >
+                <template v-slot:prepend>
+                  <v-btn 
+                    :icon="item.param ? 'mdi-less-than-or-equal': 'mdi-greater-than'"
+                     @click="item.param = !item.param">
+                  </v-btn>
+                </template>
+                </v-text-field>
                 <v-text-field
                   label="Alíquota"
                   placeholder="2"
@@ -189,7 +201,7 @@
                 <li 
                   v-for="pa, p in tipo.parametros" 
                   v-show="pa.valor && pa.aliquota"
-                  :key="p">Veículos até : R$ {{ pa.valor }} <v-icon>mdi-arrow-right</v-icon> Alíquota : {{ pa.aliquota }}
+                  :key="p">Veículos até : R$ {{ pa.valor }} <v-icon>mdi-arrow-right</v-icon> Alíquota : {{ pa.aliquota }}%
                 </li>
               </ul>
             </div>
@@ -198,12 +210,11 @@
           <v-alert variant="outlined" v-else class="my-5" type="info">
             Adicione os tipos de veílcuos para iniciar a simulação
           </v-alert variant="outlined">
+
+          <!-- aparecer apos confirmar o calculo -->
           <div class="boxResultadoWrapper mb-5">
             <div class="boxSimulador">
               <h3>Valor Potencial da Arrecadação</h3>
-            </div>
-            <div class="boxSimulador">
-              <h3>Aumento/Redução da Arrecadação</h3>
             </div>
             <div class="boxSimulador">
               <h3>Aumento/Redução da Arrecadação</h3>
@@ -219,7 +230,9 @@
 </template>
 
 <script>
-  import {mask} from 'vue-the-mask'
+  import { mask } from 'vue-the-mask'
+  import { useVeiculoStore  } from '@/stores/veiculosStore'
+  const veiculosStore = useVeiculoStore() 
 
   export default {
     directives:{ mask },
@@ -229,8 +242,8 @@
         efeito2:false,
         tab: 1,
         parametros: [
-          {valor: null, aliquota: null},
-          {valor: null, aliquota: null},
+          {valor: null, aliquota: null, param: true},
+          {valor: null, aliquota: null, param: true},
         ],
         rules:{
             required: (value) => !!value || "Campo obrigatório",
@@ -281,8 +294,8 @@
         ],
         tipoSelect: {
           id:0, tipo: '', icon: '', parametros: [
-              {valor: null, aliquota: null},
-              {valor: null, aliquota: null}]
+              {valor: null, aliquota: null, param: true},
+              {valor: null, aliquota: null, param: true}]
         },
         veiculosAdds:[],
         anoSelect: 2024,
@@ -291,6 +304,24 @@
     computed:{
       lastParametro(){
         return this.tipoSelect.parametros.length - 1
+      },
+      listVeiculos(){
+        return veiculosStore.readVeiculo
+      },
+      load(){
+        return veiculosStore.readLoad
+      },
+      qdtRenavan(){
+        return veiculosStore.readQtdRenavan
+      },
+      valorPontencial(){
+        return veiculosStore.readValorPontencial
+      },
+      valorArrecadado(){
+        return veiculosStore.readValorArrecadado
+      },
+      calculoRead(){
+
       }
     },
     methods:{
@@ -301,7 +332,7 @@
         }, 500)
       },
       addParametro(){
-        this.tipoSelect.parametros.push({valor: '', aliquota: null})
+        this.tipoSelect.parametros.push({valor: '', aliquota: null, param: true})
       },
       removeParametro(indice){
         this.tipoSelect.parametros.splice(indice, 1)
@@ -335,12 +366,23 @@
       },
       selectType(item){
         this.tipoSelect = item
+      },
+      formatDecimal(value, decimals) {
+        return parseFloat(value).toFixed(decimals);
+      },
+      changeIcon(){
+        console.log('gteste');
       }
     }
   }
 </script>
 
 <style>
+.imgInit{
+  opacity: 0;
+  transition: .5s ease-in-out;
+  animation: aparecer .5s ease-in forwards;
+}
 .upDIv{
   transition: .5s ease;
   animation: slideUp .5s ease-in forwards;
@@ -419,13 +461,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
 .grafic{
-  width: 65%;
+  width: 50%;
   height: 200px;
 }
 .boxGrafics{
-  width: 32%;
+  width: 50%;
   height: 200px;
 }
 .simulador, .boxGrafics, .grafic, .box, .resultado, .content_itcd {
