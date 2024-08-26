@@ -21,7 +21,7 @@
             ></v-progress-linear>
             Carregando...
           </div>
-          <v-btn @click="entrar()" class="mt-5" prepend-icon="mdi-calculator-variant">ENTRAR</v-btn>
+          <v-btn :loading="load" @click="entrar()" class="mt-5" prepend-icon="mdi-calculator-variant">ENTRAR</v-btn>
         </div>
       </div>
       <div :class="efeito2 ? 'upForm': 'tabsWrapper'">
@@ -173,6 +173,7 @@
                   </template>
                 </v-text-field>
               </div>
+              <v-btn @click="copyLast()" variant="text" class="text-lowercase text-caption">copiar para o último</v-btn>
               <div class="text-center mt-5">
                 <v-btn block prepend-icon="mdi-calculator-variant" type="submit">INCLUIR NO CÁLCULO</v-btn>
                 <v-btn 
@@ -194,6 +195,7 @@
         <!-- reusultado -->
          <div class="resultado">
           <h3 class="mb-2">Resultado da Simulação</h3>
+
           <div class="my-5" v-if="veiculosAdds.length">
             <div v-for="tipo, t in veiculosAdds" :key="t" class="mb-5">
               {{ tipo.tipo }}
@@ -201,27 +203,33 @@
                 <li 
                   v-for="pa, p in tipo.parametros" 
                   v-show="pa.valor && pa.aliquota"
-                  :key="p">Veículos até : R$ {{ pa.valor }} <v-icon>mdi-arrow-right</v-icon> Alíquota : {{ pa.aliquota }}%
+                  :key="p">
+                 
+                  <v-chip><v-icon>{{ pa.param ? 'mdi-less-than-or-equal' : 'mdi-greater-than' }}</v-icon></v-chip>   R$ {{ pa.valor }} 
+                  <v-chip><v-icon>mdi-arrow-right</v-icon></v-chip> Alíquota : {{ pa.aliquota }}%
                 </li>
               </ul>
             </div>
-            <v-btn block color="teal">CALCULAR</v-btn>
+            <v-btn block color="teal" @click="calculo = true">CALCULAR</v-btn>
           </div>
+
           <v-alert variant="outlined" v-else class="my-5" type="info">
-            Adicione os tipos de veílcuos para iniciar a simulação
+            Adicione os tipos de veículos para iniciar a simulação
           </v-alert variant="outlined">
 
           <!-- aparecer apos confirmar o calculo -->
-          <div class="boxResultadoWrapper mb-5">
-            <div class="boxSimulador">
-              <h3>Valor Potencial da Arrecadação</h3>
+          <div v-if="calculo">
+            <div class="boxResultadoWrapper mb-5">
+              <div class="boxSimulador">
+                <h3>Valor Potencial da Arrecadação</h3>
+              </div>
+              <div class="boxSimulador">
+                <h3>Aumento/Redução da Arrecadação</h3>
+              </div>
             </div>
-            <div class="boxSimulador">
-              <h3>Aumento/Redução da Arrecadação</h3>
+            <div class="text-center">
+              <dialogDetails />
             </div>
-          </div>
-          <div class="text-center">
-            <v-btn class="text-lowercase">detalhar o cálculo</v-btn>
           </div>
          </div>
       </div>
@@ -252,43 +260,43 @@
         },
         tipoVeiculos:[
           {id:1, tipo: 'Caminhões', icon: 'mdi-truck-minus', parametros: [
-              {valor: null, aliquota: null},
-              {valor: null, aliquota: null},
+              {valor: null, aliquota: null, param: true},
+              {valor: null, aliquota: null, param: true},
             ],
           },
           {id:2, tipo: 'Ônibus e microônibus', icon: 'mdi-bus-side', parametros: [
-              {valor: null, aliquota: null},
-              {valor: null, aliquota: null},
+              {valor: null, aliquota: null, param: true},
+              {valor: null, aliquota: null, param: true},
             ],
           },
           {id:3, tipo: 'Caminhonetes cabine simples - até 3 passageiros', icon: 'mdi-car-pickup', parametros: [
-              {valor: null, aliquota: null},
-              {valor: null, aliquota: null},
+              {valor: null, aliquota: null, param: true},
+              {valor: null, aliquota: null, param: true},
             ],
           },
           {id:4, tipo: 'Motocicletas, ciclomotores, motonetas, triciclos e qudriciclos', icon: 'mdi-motorbike', parametros: [
-              {valor: null, aliquota: null},
-              {valor: null, aliquota: null},
+              {valor: null, aliquota: null, param: true},
+              {valor: null, aliquota: null, param: true},
             ],
           },
           {id:5, tipo: 'Embarcações', icon: 'mdi-ferry', parametros: [
-              {valor: null, aliquota: null},
-              {valor: null, aliquota: null},
+              {valor: null, aliquota: null, param: true},
+              {valor: null, aliquota: null, param: true},
             ],
           },
           {id:6, tipo: 'Aeronaves', icon: 'mdi-airplane', parametros: [
-              {valor: null, aliquota: null},
-              {valor: null, aliquota: null},
+              {valor: null, aliquota: null, param: true},
+              {valor: null, aliquota: null, param: true},
             ],
           },
           {id:7, tipo: 'Veículos de Locadoras', icon: 'mdi-car-multiple', parametros: [
-              {valor: null, aliquota: null},
-              {valor: null, aliquota: null},
+              {valor: null, aliquota: null, param: true},
+              {valor: null, aliquota: null, param: true},
             ],
           },
           {id:8, tipo: 'Demais Veículos', icon: 'mdi-car-side', parametros: [
-              {valor: null, aliquota: null},
-              {valor: null, aliquota: null},
+              {valor: null, aliquota: null, param: true},
+              {valor: null, aliquota: null, param: true},
             ],
           },
         ],
@@ -299,6 +307,7 @@
         },
         veiculosAdds:[],
         anoSelect: 2024,
+        calculo: false
       }
     },
     computed:{
@@ -372,6 +381,15 @@
       },
       changeIcon(){
         console.log('gteste');
+      },
+      copyLast(){
+        const index = this.tipoSelect.parametros.length - 1
+        const indexcopy = this.tipoSelect.parametros.length - 2
+        this.tipoSelect.parametros[index] = { 
+          valor: this.tipoSelect.parametros[indexcopy].valor,
+          aliquota: null,
+          param: false
+        }
       }
     }
   }
