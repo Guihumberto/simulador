@@ -1,5 +1,5 @@
 <template>
-    <div class="text-center pa-4">
+    <div class="text-center">
       <v-btn @click="dialog = true" class="text-lowercase">
         Detalhar o cálculo
       </v-btn>

@@ -201,6 +201,7 @@
               {{ tipo.tipo }}
               <ul class="ml-5 mt-2">
                 <li 
+                  class="mb-1"
                   v-for="pa, p in tipo.parametros" 
                   v-show="pa.valor && pa.aliquota"
                   :key="p">
@@ -210,7 +211,7 @@
                 </li>
               </ul>
             </div>
-            <v-btn block color="teal" @click="calculo = true">CALCULAR</v-btn>
+            <v-btn block color="teal" @click="calculoFinal()">CALCULAR</v-btn>
           </div>
 
           <v-alert variant="outlined" v-else class="my-5" type="info">
@@ -228,7 +229,16 @@
               </div>
             </div>
             <div class="text-center">
+              <div class="text-left my-5">
+                <h4>Informações do Cálculo</h4>
+                <ul class="ml-5">
+                  <li>Nos primeiros 3 anos: A depreciação costuma ser mais acentuada, em torno de 15% a 20% ao ano.</li>
+                  <li>Após os primeiros 3 anos: A depreciação tende a desacelerar, ficando entre 10% a 15% ao ano.</li>
+                  <li>Após 5 anos: A depreciação anual pode diminuir ainda mais, para algo entre 5% a 10% ao ano.</li>
+                </ul>
+              </div>
               <dialogDetails />
+              <v-btn variant="text" @click="newCalculo()" class="text-caption">nova simulação</v-btn>
             </div>
           </div>
          </div>
@@ -331,7 +341,14 @@
       },
       calculoRead(){
 
-      }
+      },
+      thresholds(){
+        return [
+            { max: 100000, percent: 0.05 }, // 5% para valores até 100 mil
+            { max: 200000, percent: 0.10 }, // 10% para valores entre 100 mil e 200 mil
+            { max: Infinity, percent: 0.15 }, // 15% para valores acima de 200 mil
+        ];
+      },
     },
     methods:{
       entrar(){
@@ -379,9 +396,6 @@
       formatDecimal(value, decimals) {
         return parseFloat(value).toFixed(decimals);
       },
-      changeIcon(){
-        console.log('gteste');
-      },
       copyLast(){
         const index = this.tipoSelect.parametros.length - 1
         const indexcopy = this.tipoSelect.parametros.length - 2
@@ -390,6 +404,18 @@
           aliquota: null,
           param: false
         }
+      },
+      calculoFinal(){
+        this.calculo = true
+        return this.listVeiculos.map(item => {
+            const applicableThreshold = this.thresholds.find(threshold => item.valor_veiculo <= threshold.max);
+            const calculatedValue = item.value * applicableThreshold.percent;
+            return { ...item, calculatedValue };
+        });
+      },
+      newCalculo(){
+        this.calculo = false
+        this.veiculosAdds = []
       }
     }
   }
@@ -512,7 +538,7 @@
   gap: 1rem;
 }
 .boxSimulador{
-  width: 48%;
+  width: 50%;
   height: 110px;
   border: 1px solid white;
   padding: 0.5rem;
