@@ -60,7 +60,7 @@
             <div class="box">
               <div class="box-item">
                 <v-icon  size="2.5rem" class="mr-2" color="teal">mdi-car</v-icon>
-                <h1>{{formatDecimal(qdtRenavan, 2)}}</h1>
+                <h1>{{qdtRenavan}}</h1>
               </div>
               Quantidade Renavan
             </div>
@@ -202,6 +202,7 @@
               <ul class="ml-5 mt-2">
                 <li 
                   class="mb-1"
+                  style="list-style-type: none"
                   v-for="pa, p in tipo.parametros" 
                   v-show="pa.valor && pa.aliquota"
                   :key="p">
@@ -221,10 +222,12 @@
           <!-- aparecer apos confirmar o calculo -->
           <div v-if="calculo">
             <div class="boxResultadoWrapper mb-5">
-              <div class="boxSimulador">
+              <div class="boxSimulador text-center">
+                <h1>R$ {{ totalSimulacao }}</h1>
                 <h3>Valor Potencial da Arrecadação</h3>
               </div>
-              <div class="boxSimulador">
+              <div class="boxSimulador  text-center">
+                
                 <h3>Aumento/Redução da Arrecadação</h3>
               </div>
             </div>
@@ -237,7 +240,7 @@
                   <li>Após 5 anos: A depreciação anual pode diminuir ainda mais, para algo entre 5% a 10% ao ano.</li>
                 </ul>
               </div>
-              <dialogDetails />
+              <dialogDetails :detalhes="this.calculoDet" />
               <v-btn variant="text" @click="newCalculo()" class="text-caption">nova simulação</v-btn>
             </div>
           </div>
@@ -317,7 +320,8 @@
         },
         veiculosAdds:[],
         anoSelect: 2024,
-        calculo: false
+        calculo: false,
+        calculoDet: null,
       }
     },
     computed:{
@@ -334,8 +338,8 @@
             let object = {
               type: x.id, 
               parameter: p.param ? 'lte' : 'gt',
-              value: p.valor.replace(/\D/g, ''),
-              percent: p.aliquota
+              value: parseFloat(p.valor.replace(/\D/g, '')),
+              percent: p.aliquota * 0.01
   
             }
             rules.push(object)
@@ -367,6 +371,18 @@
             { max: Infinity, percent: 0.15 }, // 15% para valores acima de 200 mil
         ];
       },
+      readVeiculosNaoIncluidos(){
+            let excluir = this.veiculosAdds.map(x => x.id)
+            console.log(excluir);
+            let list = this.listVeiculos.filter(x => !excluir.includes(x.tipo)).map(x => x.valor_lcmto)
+            console.log(list);
+            const sum = list.reduce((acc, value) => acc + value, 0)
+            return sum
+      },
+      totalSimulacao(){
+        const sum = Object.values(this.calculoDet).reduce((acc, value) => acc + value, 0);
+        return sum + this.readVeiculosNaoIncluidos
+      }
     },
     methods:{
       entrar(){
@@ -428,16 +444,14 @@
 
         const vehicles = this.listVeiculos
 
-        console.log(this.rulesParam);
-
         const totalsByType = {};
 
         vehicles.forEach(vehicle => {
             // Encontra as regras aplicáveis para o tipo e valor do veículo
             const applicableRules = this.rulesParam.filter(rule => {
                 if (rule.type !== vehicle.tipo) return false;
-                if (rule.parameter === "lte" && vehicle.valor_veiculo <= rule.value) return true;
-                if (rule.parameter === "gt" && vehicle.valor_veiculo > rule.value) return true;
+                if (rule.parameter === "lte" && parseFloat(vehicle.valor_veiculo) <= rule.value) return true;
+                if (rule.parameter === "gt" && parseFloat(vehicle.valor_veiculo) > rule.value) return true;
                 return false;
             });
 
@@ -454,14 +468,13 @@
             }
         });
 
-        console.log(totalsByType);
-
-        return totalsByType;
+        this.calculoDet = totalsByType;
       },
       newCalculo(){
         this.calculo = false
         this.veiculosAdds = []
-      }
+        this.calculoDet = null
+      },
     }
   }
 </script>

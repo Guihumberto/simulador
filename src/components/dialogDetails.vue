@@ -14,6 +14,9 @@
           text="Detalhes do aumento potencial da arrecadação comparativo de acordo com o tipo do veículo."
           title="Em construção"
         >
+          <v-card-text>
+            {{ detalhes }}
+          </v-card-text>
           <template v-slot:actions>
             <v-btn
               class="ms-auto"
@@ -32,5 +35,8 @@
         dialog: false,
       }
     },
+    props:{
+      detalhes: Object
+    }
   }
 </script>
