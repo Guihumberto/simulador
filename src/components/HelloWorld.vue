@@ -327,6 +327,24 @@
       listVeiculos(){
         return veiculosStore.readVeiculo
       },
+      rulesParam(){
+        let rules = []
+        this.veiculosAdds.forEach( x => {
+          x.parametros.forEach(p => {
+            let object = {
+              type: x.id, 
+              parameter: p.param ? 'lte' : 'gt',
+              value: p.valor.replace(/\D/g, ''),
+              percent: p.aliquota
+  
+            }
+            rules.push(object)
+          })
+
+        })
+
+        return rules
+      },
       load(){
         return veiculosStore.readLoad
       },
@@ -407,11 +425,38 @@
       },
       calculoFinal(){
         this.calculo = true
-        return this.listVeiculos.map(item => {
-            const applicableThreshold = this.thresholds.find(threshold => item.valor_veiculo <= threshold.max);
-            const calculatedValue = item.value * applicableThreshold.percent;
-            return { ...item, calculatedValue };
+
+        const vehicles = this.listVeiculos
+
+        console.log(this.rulesParam);
+
+        const totalsByType = {};
+
+        vehicles.forEach(vehicle => {
+            // Encontra as regras aplicáveis para o tipo e valor do veículo
+            const applicableRules = this.rulesParam.filter(rule => {
+                if (rule.type !== vehicle.tipo) return false;
+                if (rule.parameter === "lte" && vehicle.valor_veiculo <= rule.value) return true;
+                if (rule.parameter === "gt" && vehicle.valor_veiculo > rule.value) return true;
+                return false;
+            });
+
+            // Calcula o valor aplicando o percentual
+            const totalValue = applicableRules.reduce((acc, rule) => {
+                return acc + (vehicle.valor_veiculo * rule.percent);
+            }, 0);
+
+            // Soma o total calculado ao tipo correspondente
+            if (totalsByType[vehicle.tipo]) {
+                totalsByType[vehicle.tipo] += totalValue;
+            } else {
+                totalsByType[vehicle.tipo] = totalValue;
+            }
         });
+
+        console.log(totalsByType);
+
+        return totalsByType;
       },
       newCalculo(){
         this.calculo = false
@@ -465,7 +510,7 @@
   display: flex;
   height: 3.5rem;
   border-block-end: 1px solid #e9ebec;
-  width: 200px;
+  width: min(200px, 100%);
 }
 .tabs input {
   display: none;

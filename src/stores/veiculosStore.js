@@ -54,7 +54,7 @@ export const useVeiculoStore = defineStore("veiculo", {
     },
     actions:{
         popularVeiculos(tipo, veiculo){
-            for(let i = 1; i <= 100000; i++){
+            for(let i = 1; i <= 10000; i++){
                 veiculo.tipo = tipo
                 this.veiculos.push(veiculo)
             }
