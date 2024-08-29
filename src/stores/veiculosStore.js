@@ -14,8 +14,8 @@ export const useVeiculoStore = defineStore("veiculo", {
             combustivel: 1,
             tipo: 1,
             uso: 1,
-            valor_veiculo: 20000.00,
-            valor_lcmto: 2000.00,
+            valor_veiculo: 120000.00,
+            valor_lcmto: 3000.00,
             valor_pago: 1000.00   
         },
         load: true
@@ -58,10 +58,38 @@ export const useVeiculoStore = defineStore("veiculo", {
                 veiculo.tipo = 1
                 this.veiculos.push(veiculo)
             }
+            for(let i = 1; i <= 2; i++){
+                veiculo.tipo = 2
+                this.veiculos.push(veiculo)
+            }
+            for(let i = 1; i <= 2; i++){
+                veiculo.tipo = 3
+                this.veiculos.push(veiculo)
+            }
+            for(let i = 1; i <= 2; i++){
+                veiculo.tipo = 5
+                this.veiculos.push(veiculo)
+            }
+            for(let i = 1; i <= 2; i++){
+                veiculo.tipo = 5
+                this.veiculos.push(veiculo)
+            }
+            for(let i = 1; i <= 2; i++){
+                veiculo.tipo = 6
+                this.veiculos.push(veiculo)
+            }
+            for(let i = 1; i <= 2; i++){
+                veiculo.tipo = 7
+                this.veiculos.push(veiculo)
+            }
+            for(let i = 1; i <= 2; i++){
+                veiculo.tipo = 8
+                this.veiculos.push(veiculo)
+            }
         },
         async initMassaTeste(){
             try {
-                for(let i = 1; i <= 8; i++){
+                for(let i = 1; i <= 5; i++){
                     await this.popularVeiculos(i, this.veiculo)
                 }
             } catch (error) {

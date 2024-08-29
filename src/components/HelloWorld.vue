@@ -21,7 +21,7 @@
             ></v-progress-linear>
             Carregando...
           </div>
-          <v-btn :loading="load" @click="entrar()" class="mt-5" prepend-icon="mdi-calculator-variant">ENTRAR</v-btn>
+          <v-btn :loading="load" @click="entrar()" class="mt-5" variant="outlined" prepend-icon="mdi-calculator-variant">ENTRAR</v-btn>
         </div>
       </div>
       <div :class="efeito2 ? 'upForm': 'tabsWrapper'">
@@ -60,21 +60,21 @@
             <div class="box">
               <div class="box-item">
                 <v-icon  size="2.5rem" class="mr-2" color="teal">mdi-car</v-icon>
-                <h1>{{qdtRenavan}}</h1>
+                <h2>{{qdtRenavan}}</h2>
               </div>
               Quantidade Renavan
             </div>
             <div class="box">
               <div class="box-item">
                 <v-icon  size="2.5rem" class="mr-2" color="teal">mdi-cash</v-icon>
-                <h1>{{ formatDecimal(valorPontencial, 2)}}</h1>
+                <h2>{{ formatDecimal(valorPontencial)}}</h2>
               </div>
               Potencial de Arrecadação
             </div>
             <div class="box">
               <div class="box-item">
                 <v-icon  size="2.5rem" class="mr-2" color="teal">mdi-gold</v-icon>
-                <h1>{{ formatDecimal(valorArrecadado, 2) }}</h1>
+                <h2>{{ formatDecimal(valorArrecadado) }}</h2>
               </div>
               Arrecadação até o momento
             </div>
@@ -82,40 +82,59 @@
   
           <div class="graficWrapper">
             <div class="grafic">
-              Arrecadação
+              <div class="d-flex align-center">
+                <v-icon class="mr-1">mdi-cash</v-icon>
+                Arrecadação
+              </div>
               <div class="text-center">
                 <v-progress-circular :model-value="valorArrecadado/valorPontencial * 100" :size="140" :width="42" color="teal">
-                  <template v-slot:default> {{ valorArrecadado/valorPontencial * 100 }}% </template>
+                  <template v-slot:default> {{ (valorArrecadado/valorPontencial * 100).toFixed(2) }}% </template>
                 </v-progress-circular>
               </div>
             </div>
             <div class="boxGrafics">
-              <h3 class="mb-3">Benefícios IPVA</h3>
+              <h3 class="mb-3"> <v-icon>mdi-cash-off</v-icon> Benefícios IPVA</h3>
               <div class="isencao">
                 <div class="isencao-item">
-                  <v-icon class="mr-2">mdi-car-electric</v-icon>
-                  Carros Elétricos
+                  <div>
+                    <v-icon class="mr-2">mdi-car-electric</v-icon>
+                    Carros Elétricos
+                  </div>
+                  <div>{{formatDecimal(10)}}</div>
                 </div>
                 <div class="isencao-item">
-                  <v-icon class="mr-2">mdi-car</v-icon>
-                  Carros Usados
+                  <div>
+                    <v-icon class="mr-2">mdi-car</v-icon>
+                    Carros Usados
+                  </div>
+                  <div>{{formatDecimal(10)}}</div>
                 </div>
                 <div class="isencao-item">
-                  <v-icon class="mr-2">mdi-home</v-icon>
-                  PNE
+                  <div>
+                    <v-icon class="mr-2">mdi-human-wheelchair</v-icon>
+                    PNE
+                  </div>
+                  <div>{{formatDecimal(10)}}</div>
                 </div>
                 <div class="isencao-item">
-                  <v-icon class="mr-2">mdi-home</v-icon>
-                  Outros benefícios
+                  <div>
+                    <v-icon class="mr-2">mdi-handshake</v-icon>
+                    Outros benefícios
+                  </div>
+                  <div>{{formatDecimal(10)}}</div>
                 </div>
               </div>
             </div>
           </div>
   
           <div class="simulador">
+            <!-- lista de tipos de veículos -->
             <div class="wrapperBoxSimulator">
               <v-list class="pa-0">
-                <v-list-subheader>Escolha o Tipo de Veículo</v-list-subheader>
+                <div class="d-flex align-center justify-space-between px-4"> 
+                  <span class="text-teal">Escolha o Tipo de Veículo</span>
+                  <dialogAddType />
+                </div>
                 <v-list-item v-for="item, i in tipoVeiculos" :key="i" link color="primary" :value="i" @click="selectType(item)">
                   <template v-slot:prepend>
                     <v-icon>{{ item.icon }}</v-icon>
@@ -124,6 +143,7 @@
                 </v-list-item>
               </v-list>
             </div>
+            <!-- formulario -->
             <v-form class="formSim" @submit.prevent="calcularSimulacao()" ref="form" v-if="tipoSelect.icon">
               <div class="d-flex justify-center mb-5 bg-primary pa-1">
                 <v-icon class="mr-2">{{ tipoSelect.icon }}</v-icon>
@@ -144,7 +164,8 @@
                 >
                 <template v-slot:prepend>
                   <v-btn 
-                    :icon="item.param ? 'mdi-less-than-or-equal': 'mdi-greater-than'"
+                    :icon="item.param ? 'mdi-less-than-or-equal': 'mdi-greater-than'" variant="outlined" density="comfortable"
+                    :title="item.param ? 'menor ou igual' : 'maior que'"
                      @click="item.param = !item.param">
                   </v-btn>
                 </template>
@@ -175,7 +196,7 @@
               </div>
               <v-btn @click="copyLast()" variant="text" class="text-lowercase text-caption">copiar para o último</v-btn>
               <div class="text-center mt-5">
-                <v-btn block prepend-icon="mdi-calculator-variant" type="submit">INCLUIR NO CÁLCULO</v-btn>
+                <v-btn block prepend-icon="mdi-calculator-variant" type="submit" variant="outlined">INCLUIR NO CÁLCULO</v-btn>
                 <v-btn 
                   @click="clearAllParametros()" 
                   class="mt-1 text-lowercase text-overline" 
@@ -194,11 +215,14 @@
         </div>
         <!-- reusultado -->
          <div class="resultado">
-          <h3 class="mb-2">Resultado da Simulação</h3>
+          <h3 class="mb-2"><v-icon size="1.3rem" class="mr-1">mdi-list-box</v-icon>Resultado da Simulação</h3>
 
           <div class="my-5" v-if="veiculosAdds.length">
             <div v-for="tipo, t in veiculosAdds" :key="t" class="mb-5">
-              {{ tipo.tipo }}
+              <div class="d-flex align-center">
+                <v-icon size="1.2rem" class="mr-1">{{ tipo.icon }}</v-icon>
+                {{ tipo.tipo }}
+              </div>
               <ul class="ml-5 mt-2">
                 <li 
                   class="mb-1"
@@ -220,20 +244,23 @@
           </v-alert variant="outlined">
 
           <!-- aparecer apos confirmar o calculo -->
-          <div v-if="calculo">
+          <div v-if="calculo" id="calculofinal">
             <div class="boxResultadoWrapper mb-5">
               <div class="boxSimulador text-center">
-                <h1>R$ {{ totalSimulacao }}</h1>
+                <h1>{{ formatDecimal(totalSimulacao) }}</h1>
                 <h3>Valor Potencial da Arrecadação</h3>
               </div>
               <div class="boxSimulador  text-center">
-                
-                <h3>Aumento/Redução da Arrecadação</h3>
+                <h1>{{ formatDecimal(totalSimulacao - valorPontencial) }}</h1>
+                <h3 :class="(totalSimulacao - valorPontencial) > 0 ? 'text-blue':'text-red'">
+                  <v-icon>{{(totalSimulacao - valorPontencial) > 0 ?'mdi-arrow-up':'mdi-arrow-down'}}</v-icon>
+                  {{(totalSimulacao - valorPontencial) > 0 ?'Aumento':'Redução'}} da Arrecadação
+                </h3>
               </div>
             </div>
             <div class="text-center">
               <div class="text-left my-5">
-                <h4>Informações do Cálculo</h4>
+                <h4>Informações da Depreciação do Veículo</h4>
                 <ul class="ml-5">
                   <li>Nos primeiros 3 anos: A depreciação costuma ser mais acentuada, em torno de 15% a 20% ao ano.</li>
                   <li>Após os primeiros 3 anos: A depreciação tende a desacelerar, ficando entre 10% a 15% ao ano.</li>
@@ -337,7 +364,7 @@
           x.parametros.forEach(p => {
             let object = {
               type: x.id, 
-              parameter: p.param ? 'lte' : 'gt',
+              parameter: p.param ? 'gt' : 'lte',
               value: parseFloat(p.valor.replace(/\D/g, '')),
               percent: p.aliquota * 0.01
   
@@ -427,8 +454,11 @@
       selectType(item){
         this.tipoSelect = item
       },
-      formatDecimal(value, decimals) {
-        return parseFloat(value).toFixed(decimals);
+      formatDecimal(value) {
+        return parseFloat(value).toLocaleString('pt-BR', {
+          style: 'currency',
+          currency: 'BRL'
+        });
       },
       copyLast(){
         const index = this.tipoSelect.parametros.length - 1
@@ -469,6 +499,13 @@
         });
 
         this.calculoDet = totalsByType;
+
+        setTimeout(() => {
+          const element = document.getElementById('calculofinal')
+          element.scrollIntoView({behavior: "smooth"})
+        }, 1000)
+
+        
       },
       newCalculo(){
         this.calculo = false
@@ -575,7 +612,7 @@
 }
 .simulador, .boxGrafics, .grafic, .box, .resultado, .content_itcd {
   padding: 1rem;
-  border: 1px solid white;
+  border: 1px solid grey;
 }
 .wrapperbox, .graficWrapper, .simulador, .resultado {
   margin-top: 1rem;
@@ -608,6 +645,7 @@
 }
 .isencao-item{
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 

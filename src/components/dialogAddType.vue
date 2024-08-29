@@ -1,8 +1,6 @@
 <template>
     <div class="text-center">
-      <v-btn @click="dialog = true" class="text-lowercase" variant="outlined">
-        Detalhar o cálculo
-      </v-btn>
+      <v-btn @click="dialog = true" density="comfortable" variant="outlined" icon="mdi-plus" class="my-1"></v-btn>
   
       <v-dialog
         v-model="dialog"
@@ -10,12 +8,12 @@
       >
         <v-card
           max-width="400"
-          prepend-icon="mdi-details"
-          text="Detalhes do aumento potencial da arrecadação comparativo de acordo com o tipo do veículo."
-          title="Em construção"
+          prepend-icon="mdi-plus-circle"
+          text="Adicione um novo tipo de veículo."
+          title="Adcionar Tipo de Veículo"
         >
           <v-card-text>
-            {{ detalhes }}
+  
           </v-card-text>
           <template v-slot:actions>
             <v-btn
