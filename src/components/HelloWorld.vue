@@ -105,7 +105,7 @@
                 <div class="isencao-item">
                   <div>
                     <v-icon class="mr-2">mdi-car</v-icon>
-                    Carros Usados
+                    Carros Usados - mais de 15 anos
                   </div>
                   <div>{{formatDecimal(10)}}</div>
                 </div>
@@ -258,6 +258,9 @@
                 </h3>
               </div>
             </div>
+            <div>
+              ---Mostrar perda de arrecadação com veículos com mais de 15 anos de fabricação-- 
+            </div>
             <div class="text-center">
               <div class="text-left my-5">
                 <h4>Informações da Depreciação do Veículo</h4>
@@ -266,6 +269,13 @@
                   <li>Após os primeiros 3 anos: A depreciação tende a desacelerar, ficando entre 10% a 15% ao ano.</li>
                   <li>Após 5 anos: A depreciação anual pode diminuir ainda mais, para algo entre 5% a 10% ao ano.</li>
                 </ul>
+                <h4 class="mt-5">Informações gerais consideradas na simulação</h4>
+                  <ul class="ml-5">
+                    <li>Veículos com mais de 15 anos são desconsiderados do cálculo.</li>
+                    <li>Veículos Elétricos adquiridos no Estado do Maranhão são isentos.</li>
+                    <li>Outros benefícios aplicados ao IPVA sáo desconsiderados no cálculo.</li>
+                    <li>A depreciação dos veículos são aplicados em seus menores valores.</li>
+                  </ul>
               </div>
               <dialogDetails :detalhes="this.calculoDet" />
               <v-btn variant="text" @click="newCalculo()" class="text-caption">nova simulação</v-btn>
