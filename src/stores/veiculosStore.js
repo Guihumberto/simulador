@@ -18,7 +18,9 @@ export const useVeiculoStore = defineStore("veiculo", {
             valor_lcmto: 3000.00,
             valor_pago: 1000.00   
         },
-        load: true
+        load: true,
+        carrosMais15Anos: [],
+        carrosMenos15Anos: []
     }),
     getters: {
         readVeiculo(){
@@ -48,46 +50,59 @@ export const useVeiculoStore = defineStore("veiculo", {
 
             return soma
         },
-        atualizacaoValorVeiculo(){
-            return this.veiculos
+        readAtualizacaoValorVeiculosMenos15anos(){
+            const veiculos = this.carrosMenos15Anos
+
+            // veiculos.forEach(v => {
+            //     const faixadepreciacao = (this.readProximoAno - v.anoVeiculo)
+   
+            //     if(faixadepreciacao <= 3){
+            //         v.valor_veiculo = v.valor_veiculo * (1 - 0.15)
+            //     }
+            //     else if (faixadepreciacao > 3 && faixadepreciacao <= 5) {
+            //         v.valor_veiculo = v.valor_veiculo * (1 - 0.10)
+            //     } else {
+            //         v.valor_veiculo = v.valor_veiculo * (1 - 0.05)
+            //     }
+            // })
+        
+            return veiculos
+        },
+        beneficioCarroMais15anos(){
+            const total = this.carrosMais15Anos.reduce((acc, item)=>{ return acc + (item.valor_lcmto)}, 0)
+            return [ total, this.carrosMais15Anos.length ]
+        },
+        readProximoAno(){
+            return new Date().getFullYear() + 1
         }
     },
     actions:{
         popularVeiculos(tipo, veiculo){
             for(let i = 1; i <= 2; i++){
-                veiculo.tipo = 1
-                this.veiculos.push(veiculo)
+                let veiculo_novo = { ...veiculo }
+                veiculo_novo.tipo = tipo
+                this.veiculos.push(veiculo_novo)
             }
-            for(let i = 1; i <= 2; i++){
-                veiculo.tipo = 2
-                this.veiculos.push(veiculo)
+            for(let i = 1; i <=5; i++){
+                let veiculo_novo = { ...veiculo }
+                veiculo_novo.anoVeiculo = 2009
+                this.veiculos.push(veiculo_novo)
             }
-            for(let i = 1; i <= 2; i++){
-                veiculo.tipo = 3
-                this.veiculos.push(veiculo)
+            for(let i = 1; i <=5; i++){
+                let veiculo_novo = { ...veiculo }
+                veiculo_novo.tipo = tipo
+                veiculo_novo.anoVeiculo = 2020
+                this.veiculos.push(veiculo_novo)
             }
-            for(let i = 1; i <= 2; i++){
-                veiculo.tipo = 5
-                this.veiculos.push(veiculo)
-            }
-            for(let i = 1; i <= 2; i++){
-                veiculo.tipo = 5
-                this.veiculos.push(veiculo)
-            }
-            for(let i = 1; i <= 2; i++){
-                veiculo.tipo = 6
-                this.veiculos.push(veiculo)
-            }
-            for(let i = 1; i <= 2; i++){
-                veiculo.tipo = 7
-                this.veiculos.push(veiculo)
-            }
-            for(let i = 1; i <= 2; i++){
-                veiculo.tipo = 8
-                this.veiculos.push(veiculo)
+            for(let i = 1; i <=5; i++){
+                let veiculo_novo = { ...veiculo }
+                veiculo_novo.tipo = 5
+                veiculo_novo.anoVeiculo = 2015
+                this.veiculos.push(veiculo_novo)
             }
         },
         async initMassaTeste(){
+            this.corteVeiculos15anos()
             try {
                 for(let i = 1; i <= 5; i++){
                     await this.popularVeiculos(i, this.veiculo)
@@ -97,7 +112,14 @@ export const useVeiculoStore = defineStore("veiculo", {
             } finally {
                 this.load = false
                 console.log('carregamento completo');
+                this.corteVeiculos15anos()
             }
+        },
+        corteVeiculos15anos(){
+            const carros = this.readVeiculo
+
+            this.carrosMais15Anos = carros.filter(carro => this.readProximoAno - carro.anoVeiculo > 15);
+            this.carrosMenos15Anos = carros.filter(carro => this.readProximoAno - carro.anoVeiculo <= 15);
         }
     }
 });

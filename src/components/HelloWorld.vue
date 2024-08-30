@@ -157,9 +157,9 @@
                   density="compact"
              
                   class="mr-2 w-50"
-                  v-model="item.valor"
+                  v-model.lazy="item.valor"
                   :rules="[rules.required]"
-                  v-mask="['#,##', '##,##', '###,##', '#.###,##', '##.###,##', '###.###,##','##.####.####,##']"
+                  v-money="money"
     
                 >
                 <template v-slot:prepend>
@@ -245,6 +245,7 @@
 
           <!-- aparecer apos confirmar o calculo -->
           <div v-if="calculo" id="calculofinal">
+            Quantidade de Veículos: {{ listVeiculosMenos15anos.length }}
             <div class="boxResultadoWrapper mb-5">
               <div class="boxSimulador text-center">
                 <h1>{{ formatDecimal(totalSimulacao) }}</h1>
@@ -258,8 +259,10 @@
                 </h3>
               </div>
             </div>
-            <div>
-              ---Mostrar perda de arrecadação com veículos com mais de 15 anos de fabricação-- 
+            <div class="border pa-5 bg-grey-lighten-5">
+               Valor do IPVA em {{ new Date().getFullYear() +1 }} que será isento com veículos com mais de 15 anos de fabricação:
+               
+               {{ formatDecimal(beneficioMais15anos[0]) }} ({{ beneficioMais15anos[1] }})
             </div>
             <div class="text-center">
               <div class="text-left my-5">
@@ -273,8 +276,9 @@
                   <ul class="ml-5">
                     <li>Veículos com mais de 15 anos são desconsiderados do cálculo.</li>
                     <li>Veículos Elétricos adquiridos no Estado do Maranhão são isentos.</li>
-                    <li>Outros benefícios aplicados ao IPVA sáo desconsiderados no cálculo.</li>
+                    <li>Outros benefícios aplicados ao IPVA sào desconsiderados no cálculo.</li>
                     <li>A depreciação dos veículos são aplicados em seus menores valores.</li>
+                    <li>Prováveis veículos adquiridos futuramente ou transferências realizadas não são consideradas no cálculo da simulação.</li>
                   </ul>
               </div>
               <dialogDetails :detalhes="this.calculoDet" />
@@ -290,10 +294,12 @@
 <script>
   import { mask } from 'vue-the-mask'
   import { useVeiculoStore  } from '@/stores/veiculosStore'
+   import {VMoney} from 'v-money'
+
   const veiculosStore = useVeiculoStore() 
 
   export default {
-    directives:{ mask },
+    directives:{ mask, money: VMoney },
     data(){
       return{
         efeito: false, 
@@ -359,14 +365,28 @@
         anoSelect: 2024,
         calculo: false,
         calculoDet: null,
+        money: {
+          decimal: ',',
+          thousands: '.',
+          prefix: 'R$ ',
+          suffix: '',
+          precision: 2,
+          masked: false /* doesn't work with directive */
+        }
       }
     },
     computed:{
+      beneficioMais15anos(){
+        return veiculosStore.beneficioCarroMais15anos
+      },
       lastParametro(){
         return this.tipoSelect.parametros.length - 1
       },
       listVeiculos(){
         return veiculosStore.readVeiculo
+      },
+      listVeiculosMenos15anos(){
+        return veiculosStore.readAtualizacaoValorVeiculosMenos15anos
       },
       rulesParam(){
         let rules = []
@@ -374,11 +394,12 @@
           x.parametros.forEach(p => {
             let object = {
               type: x.id, 
-              parameter: p.param ? 'gt' : 'lte',
-              value: parseFloat(p.valor.replace(/\D/g, '')),
-              percent: p.aliquota * 0.01
+              parameter: p.param ? 'lte' : 'gt',
+              value: (parseFloat(p.valor.replace(/\D/g, '')) / 100 ).toFixed(2),
+              percent: p.aliquota.replace(',', '.') * 0.01
   
             }
+            console.log(object.parameter);
             rules.push(object)
           })
 
@@ -398,21 +419,9 @@
       valorArrecadado(){
         return veiculosStore.readValorArrecadado
       },
-      calculoRead(){
-
-      },
-      thresholds(){
-        return [
-            { max: 100000, percent: 0.05 }, // 5% para valores até 100 mil
-            { max: 200000, percent: 0.10 }, // 10% para valores entre 100 mil e 200 mil
-            { max: Infinity, percent: 0.15 }, // 15% para valores acima de 200 mil
-        ];
-      },
       readVeiculosNaoIncluidos(){
             let excluir = this.veiculosAdds.map(x => x.id)
-            console.log(excluir);
             let list = this.listVeiculos.filter(x => !excluir.includes(x.tipo)).map(x => x.valor_lcmto)
-            console.log(list);
             const sum = list.reduce((acc, value) => acc + value, 0)
             return sum
       },
@@ -481,17 +490,23 @@
       },
       calculoFinal(){
         this.calculo = true
-
-        const vehicles = this.listVeiculos
-
+        const vehicles = this.listVeiculosMenos15anos
         const totalsByType = {};
 
         vehicles.forEach(vehicle => {
             // Encontra as regras aplicáveis para o tipo e valor do veículo
             const applicableRules = this.rulesParam.filter(rule => {
                 if (rule.type !== vehicle.tipo) return false;
-                if (rule.parameter === "lte" && parseFloat(vehicle.valor_veiculo) <= rule.value) return true;
-                if (rule.parameter === "gt" && parseFloat(vehicle.valor_veiculo) > rule.value) return true;
+                if (rule.parameter === "lte" && vehicle.valor_veiculo <= rule.value) {
+                  console.log(vehicle.valor_veiculo);
+                  console.log('lte', rule);
+                  return true;
+                }
+                if (rule.parameter === "gt" && vehicle.valor_veiculo > rule.value) {
+                  console.log(vehicle.valor_veiculo);
+                  console.log('gt', rule);
+                  return true;
+                }
                 return false;
             });
 
@@ -515,7 +530,6 @@
           element.scrollIntoView({behavior: "smooth"})
         }, 1000)
 
-        
       },
       newCalculo(){
         this.calculo = false
