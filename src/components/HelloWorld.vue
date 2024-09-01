@@ -13,7 +13,7 @@
 
         <div class="text-center">
           <div class="text-body-2 font-weight-light mb-n1">Bem-vindo ao</div>
-          <h1 class="text-h3 font-weight-bold">Simulador SEFAZ</h1>
+          <h1 class="texth3 font-weight-bold">Simulador SEFAZ</h1>
           <div v-if="load" class="my-5">
             <v-progress-linear
               color="cyan"
@@ -144,7 +144,7 @@
               </v-list>
             </div>
             <!-- formulario -->
-            <v-form class="formSim" @submit.prevent="calcularSimulacao()" ref="form" v-if="tipoSelect.icon">
+            <v-form class="formSim" @submit.prevent="calcularSimulacao()" ref="form" v-if="tipoSelect.icon" >
               <div class="d-flex justify-center mb-5 bg-primary pa-1">
                 <v-icon class="mr-2">{{ tipoSelect.icon }}</v-icon>
                 <h3>{{ tipoSelect.tipo }}</h3>
@@ -195,6 +195,10 @@
                 </v-text-field>
               </div>
               <v-btn @click="copyLast()" variant="text" class="text-lowercase text-caption">copiar para o último</v-btn>
+              <!-- aviso -->
+              <v-alert v-if="validarFormulario()" class="text-red">
+                {{ validarFormulario() }}
+              </v-alert>
               <div class="text-center mt-5">
                 <v-btn block prepend-icon="mdi-calculator-variant" type="submit" variant="outlined">INCLUIR NO CÁLCULO</v-btn>
                 <v-btn 
@@ -463,6 +467,32 @@
           
         }
       },
+      validarFormulario(){
+        const primeiroObjeto = this.tipoSelect.parametros[1]
+
+        if(this.tipoSelect.parametros.length > 1) {
+
+          const ultimoObjeto = this.tipoSelect.parametros[this.tipoSelect.parametros.length - 2]
+          const novoObjeto = this.tipoSelect.parametros[this.tipoSelect.parametros.length - 1]
+
+          if(novoObjeto.aliquota && ultimoObjeto.aliquota){
+                if(novoObjeto.param && ultimoObjeto.param){
+                  if(novoObjeto.valor < ultimoObjeto.valor || novoObjeto.aliquota < ultimoObjeto.aliquota) return 'Existem valores se sobrepondo.'
+                  if(novoObjeto.valor > ultimoObjeto.valor && novoObjeto.aliquota > ultimoObjeto.aliquota){
+                    return false
+                  }  else {
+                    if(novoObjeto.aliquota && novoObjeto.valor) return 'Quando o último campo for menor ou igual, o valor e a alíquota da dessa faixa precisa ser maior que da faixa anterior'
+                  }
+                }
+                if(!novoObjeto.param && ultimoObjeto.param && novoObjeto.valor > ultimoObjeto.valor) return 'Existem faixas de valores não parametrizados.'
+          }
+
+        } 
+
+        
+      },
+
+
       selectAno(tipo){
         if(tipo){
           this.anoSelect--
@@ -584,7 +614,7 @@
   display: flex;
   height: 3.5rem;
   border-block-end: 1px solid #e9ebec;
-  width: min(200px, 100%);
+  width: 200px
 }
 .tabs input {
   display: none;
@@ -736,6 +766,20 @@
   }
   .content_itcd{
     margin-right: 1rem;
+  }
+}
+.texth3{
+  font-size: rem;
+  transition: 1s ease;
+}
+@media (max-width: 606px) {
+  .simulador, .resultado {
+    width: 370px;
+  }
+}
+@media (max-width: 400px){
+  .texth3{
+    font-size: 2rem;
   }
 }
 </style>

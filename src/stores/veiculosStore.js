@@ -53,19 +53,6 @@ export const useVeiculoStore = defineStore("veiculo", {
         readAtualizacaoValorVeiculosMenos15anos(){
             const veiculos = this.carrosMenos15Anos
 
-            // veiculos.forEach(v => {
-            //     const faixadepreciacao = (this.readProximoAno - v.anoVeiculo)
-   
-            //     if(faixadepreciacao <= 3){
-            //         v.valor_veiculo = v.valor_veiculo * (1 - 0.15)
-            //     }
-            //     else if (faixadepreciacao > 3 && faixadepreciacao <= 5) {
-            //         v.valor_veiculo = v.valor_veiculo * (1 - 0.10)
-            //     } else {
-            //         v.valor_veiculo = v.valor_veiculo * (1 - 0.05)
-            //     }
-            // })
-        
             return veiculos
         },
         beneficioCarroMais15anos(){
@@ -120,6 +107,26 @@ export const useVeiculoStore = defineStore("veiculo", {
 
             this.carrosMais15Anos = carros.filter(carro => this.readProximoAno - carro.anoVeiculo > 15);
             this.carrosMenos15Anos = carros.filter(carro => this.readProximoAno - carro.anoVeiculo <= 15);
+
+            this.depreciacaoVeiculo(this.carrosMenos15Anos)
+        },
+        depreciacaoVeiculo(item){
+            const depreciacaoVeiculos = []
+            item.forEach(v => {
+                const faixadepreciacao = (this.readProximoAno - v.anoVeiculo)
+   
+                if(faixadepreciacao <= 3){
+                    v.valor_veiculo = v.valor_veiculo * (1 - 0.15)
+                }
+                else if (faixadepreciacao > 3 && faixadepreciacao <= 5) {
+                    v.valor_veiculo = v.valor_veiculo * (1 - 0.10)
+                } else {
+                    v.valor_veiculo = v.valor_veiculo * (1 - 0.05)
+                }
+                depreciacaoVeiculos.push(v)
+            })
+
+            this.carrosMenos15Anos = [ ...depreciacaoVeiculos ]
         }
     }
 });
