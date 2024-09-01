@@ -1,6 +1,6 @@
 <template>
-  <v-footer height="40" app>
-    <small>Desenvolvido Internamente pela COTEC/SEFAZ-MA</small>
+  <v-footer height="40" class="footerv" app>
+    <small class="firsttext">Desenvolvido Internamente pela COTEC/SEFAZ-MA</small>
 
     <div
       class="text-caption text-disabled"
@@ -55,12 +55,14 @@
   ]
 </script>
 
-<style scoped lang="sass">
-  .social-link :deep(.v-icon)
-    color: rgba(var(--v-theme-on-background), var(--v-disabled-opacity))
-    text-decoration: none
-    transition: .2s ease-in-out
+<style scoped>
+.footerv{
+  width: 100vw;
+}
+@media (max-width: 450px) {
+  .firsttext{
+    display: none
+  }
+}
 
-    &:hover
-      color: rgba(25, 118, 210, 1)
 </style>
