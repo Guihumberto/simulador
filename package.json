@@ -12,6 +12,7 @@
     "core-js": "^3.37.1",
     "roboto-fontface": "*",
     "v-money": "^0.8.1",
+    "v-money3": "^3.24.1",
     "vue": "^3.4.31",
     "vue-the-mask": "^0.11.1",
     "vuetify": "^3.6.11"

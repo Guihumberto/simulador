@@ -33,8 +33,10 @@
           <div class="tabs">
             <input @click="tab = 1" type="radio" id="ipva" name="tabs" checked>
             <label for="ipva">IPVA</label>
-            <input @click="tab = 2" type="radio" id="itcd" name="tabs">
-            <label for="itcd">ITCD</label>
+            <!-- <input @click="tab = 2" type="radio" id="itcd" name="tabs">
+            <label for="itcd">ITCD</label> -->
+            <input @click="tab = 3" type="radio" id="juros" name="tabs">
+            <label for="juros">JUROS</label>
           </div>
         </div>
 
@@ -50,7 +52,7 @@
               <v-btn :disabled="anoSelect <= 2020" @click="selectAno(true)">
                 <v-icon>mdi-menu-left</v-icon>
               </v-btn>
-  
+
               <v-btn :disabled="anoSelect >= 2024" @click="selectAno(false)">
                 <v-icon>mdi-menu-right</v-icon>
               </v-btn>
@@ -79,7 +81,7 @@
               Arrecadação até o momento
             </div>
           </div>
-  
+
           <div class="graficWrapper">
             <div class="grafic">
               <div class="d-flex align-center">
@@ -126,12 +128,12 @@
               </div>
             </div>
           </div>
-  
+
           <div class="simulador">
             <!-- lista de tipos de veículos -->
             <div class="wrapperBoxSimulator">
               <v-list class="pa-0">
-                <div class="d-flex align-center justify-space-between px-4"> 
+                <div class="d-flex align-center justify-space-between px-4">
                   <span class="text-teal">Escolha o Tipo de Veículo</span>
                   <dialogAddType />
                 </div>
@@ -155,15 +157,15 @@
                   placeholder="150.000,00"
                   variant="outlined"
                   density="compact"
-             
+
                   class="mr-2 w-50"
                   v-model.lazy="item.valor"
                   :rules="[rules.required]"
                   v-money="money"
-    
+
                 >
                 <template v-slot:prepend>
-                  <v-btn 
+                  <v-btn
                     :icon="item.param ? 'mdi-less-than-or-equal': 'mdi-greater-than'" variant="outlined" density="comfortable"
                     :title="item.param ? 'menor ou igual' : 'maior que'"
                      @click="item.param = !item.param">
@@ -181,11 +183,11 @@
                   v-mask="['##,##', '#,##']"
                   clearable
                   class="w-50"
-                > 
+                >
                   <template v-slot:append>
                     <div>
-                      <v-btn 
-                        :color="lastParametro == i ? 'green' : 'error'" 
+                      <v-btn
+                        :color="lastParametro == i ? 'green' : 'error'"
                         density="compact" :icon="lastParametro == i ? 'mdi-plus' : 'mdi-minus'"
                         @click="lastParametro == i ? addParametro() : removeParametro(i)"
                       >
@@ -201,15 +203,15 @@
               </v-alert>
               <div class="text-center mt-5">
                 <v-btn block prepend-icon="mdi-calculator-variant" type="submit" variant="outlined">INCLUIR NO CÁLCULO</v-btn>
-                <v-btn 
-                  @click="clearAllParametros()" 
-                  class="mt-1 text-lowercase text-overline" 
+                <v-btn
+                  @click="clearAllParametros()"
+                  class="mt-1 text-lowercase text-overline"
                   density="compact" variant="text">Limpar tudo
                 </v-btn>
               </div>
             </v-form>
             <v-alert type="info" v-else>
-              Escolha o Tipo de Veículo no menu ao lado 
+              Escolha o Tipo de Veículo no menu ao lado
             </v-alert>
           </div>
         </div>
@@ -218,78 +220,81 @@
           <div class="content_itcd"></div>
         </div>
         <!-- reusultado -->
-         <div class="resultado">
-          <h3 class="mb-2"><v-icon size="1.3rem" class="mr-1">mdi-list-box</v-icon>Resultado da Simulação</h3>
+        <div class="resultado" v-if="tab == 1">
+        <h3 class="mb-2"><v-icon size="1.3rem" class="mr-1">mdi-list-box</v-icon>Resultado da Simulação</h3>
 
-          <div class="my-5" v-if="veiculosAdds.length">
-            <div v-for="tipo, t in veiculosAdds" :key="t" class="mb-5">
-              <div class="d-flex align-center">
-                <v-icon size="1.2rem" class="mr-1">{{ tipo.icon }}</v-icon>
-                {{ tipo.tipo }}
-              </div>
-              <ul class="ml-5 mt-2">
-                <li 
-                  class="mb-1"
-                  style="list-style-type: none"
-                  v-for="pa, p in tipo.parametros" 
-                  v-show="pa.valor && pa.aliquota"
-                  :key="p">
-                 
-                  <v-chip><v-icon>{{ pa.param ? 'mdi-less-than-or-equal' : 'mdi-greater-than' }}</v-icon></v-chip>   R$ {{ pa.valor }} 
-                  <v-chip><v-icon>mdi-arrow-right</v-icon></v-chip> Alíquota : {{ pa.aliquota }}%
-                </li>
+        <div class="my-5" v-if="veiculosAdds.length">
+          <div v-for="tipo, t in veiculosAdds" :key="t" class="mb-5">
+            <div class="d-flex align-center">
+              <v-icon size="1.2rem" class="mr-1">{{ tipo.icon }}</v-icon>
+              {{ tipo.tipo }}
+            </div>
+            <ul class="ml-5 mt-2">
+              <li
+                class="mb-1"
+                style="list-style-type: none"
+                v-for="pa, p in tipo.parametros"
+                v-show="pa.valor && pa.aliquota"
+                :key="p">
+
+                <v-chip><v-icon>{{ pa.param ? 'mdi-less-than-or-equal' : 'mdi-greater-than' }}</v-icon></v-chip>   R$ {{ pa.valor }}
+                <v-chip><v-icon>mdi-arrow-right</v-icon></v-chip> Alíquota : {{ pa.aliquota }}%
+              </li>
+            </ul>
+          </div>
+          <v-btn block color="teal" @click="calculoFinal()">CALCULAR</v-btn>
+        </div>
+
+        <v-alert variant="outlined" v-else class="my-5" type="info">
+          Adicione os tipos de veículos para iniciar a simulação
+        </v-alert variant="outlined">
+
+        <!-- aparecer apos confirmar o calculo -->
+        <div v-if="calculo" id="calculofinal">
+          Quantidade de Veículos: {{ listVeiculosMenos15anos.length }}
+          <div class="boxResultadoWrapper mb-5">
+            <div class="boxSimulador text-center">
+              <h1>{{ formatDecimal(totalSimulacao) }}</h1>
+              <h3>Valor Potencial da Arrecadação</h3>
+            </div>
+            <div class="boxSimulador  text-center">
+              <h1>{{ formatDecimal(totalSimulacao - valorPontencial) }}</h1>
+              <h3 :class="(totalSimulacao - valorPontencial) > 0 ? 'text-blue':'text-red'">
+                <v-icon>{{(totalSimulacao - valorPontencial) > 0 ?'mdi-arrow-up':'mdi-arrow-down'}}</v-icon>
+                {{(totalSimulacao - valorPontencial) > 0 ?'Aumento':'Redução'}} da Arrecadação
+              </h3>
+            </div>
+          </div>
+          <div class="border pa-5 bg-grey-lighten-5">
+              Valor do IPVA em {{ new Date().getFullYear() +1 }} que será isento com veículos com mais de 15 anos de fabricação:
+
+              {{ formatDecimal(beneficioMais15anos[0]) }} ({{ beneficioMais15anos[1] }})
+          </div>
+          <div class="text-center">
+            <div class="text-left my-5">
+              <h4>Informações da Depreciação do Veículo</h4>
+              <ul class="ml-5">
+                <li>Nos primeiros 3 anos: A depreciação costuma ser mais acentuada, em torno de 15% a 20% ao ano.</li>
+                <li>Após os primeiros 3 anos: A depreciação tende a desacelerar, ficando entre 10% a 15% ao ano.</li>
+                <li>Após 5 anos: A depreciação anual pode diminuir ainda mais, para algo entre 5% a 10% ao ano.</li>
               </ul>
-            </div>
-            <v-btn block color="teal" @click="calculoFinal()">CALCULAR</v-btn>
-          </div>
-
-          <v-alert variant="outlined" v-else class="my-5" type="info">
-            Adicione os tipos de veículos para iniciar a simulação
-          </v-alert variant="outlined">
-
-          <!-- aparecer apos confirmar o calculo -->
-          <div v-if="calculo" id="calculofinal">
-            Quantidade de Veículos: {{ listVeiculosMenos15anos.length }}
-            <div class="boxResultadoWrapper mb-5">
-              <div class="boxSimulador text-center">
-                <h1>{{ formatDecimal(totalSimulacao) }}</h1>
-                <h3>Valor Potencial da Arrecadação</h3>
-              </div>
-              <div class="boxSimulador  text-center">
-                <h1>{{ formatDecimal(totalSimulacao - valorPontencial) }}</h1>
-                <h3 :class="(totalSimulacao - valorPontencial) > 0 ? 'text-blue':'text-red'">
-                  <v-icon>{{(totalSimulacao - valorPontencial) > 0 ?'mdi-arrow-up':'mdi-arrow-down'}}</v-icon>
-                  {{(totalSimulacao - valorPontencial) > 0 ?'Aumento':'Redução'}} da Arrecadação
-                </h3>
-              </div>
-            </div>
-            <div class="border pa-5 bg-grey-lighten-5">
-               Valor do IPVA em {{ new Date().getFullYear() +1 }} que será isento com veículos com mais de 15 anos de fabricação:
-               
-               {{ formatDecimal(beneficioMais15anos[0]) }} ({{ beneficioMais15anos[1] }})
-            </div>
-            <div class="text-center">
-              <div class="text-left my-5">
-                <h4>Informações da Depreciação do Veículo</h4>
+              <h4 class="mt-5">Informações gerais consideradas na simulação</h4>
                 <ul class="ml-5">
-                  <li>Nos primeiros 3 anos: A depreciação costuma ser mais acentuada, em torno de 15% a 20% ao ano.</li>
-                  <li>Após os primeiros 3 anos: A depreciação tende a desacelerar, ficando entre 10% a 15% ao ano.</li>
-                  <li>Após 5 anos: A depreciação anual pode diminuir ainda mais, para algo entre 5% a 10% ao ano.</li>
+                  <li>Veículos com mais de 15 anos são desconsiderados do cálculo.</li>
+                  <li>Veículos Elétricos adquiridos no Estado do Maranhão são isentos.</li>
+                  <li>Outros benefícios aplicados ao IPVA sào desconsiderados no cálculo.</li>
+                  <li>A depreciação dos veículos são aplicados em seus menores valores.</li>
+                  <li>Prováveis veículos adquiridos futuramente ou transferências realizadas não são consideradas no cálculo da simulação.</li>
                 </ul>
-                <h4 class="mt-5">Informações gerais consideradas na simulação</h4>
-                  <ul class="ml-5">
-                    <li>Veículos com mais de 15 anos são desconsiderados do cálculo.</li>
-                    <li>Veículos Elétricos adquiridos no Estado do Maranhão são isentos.</li>
-                    <li>Outros benefícios aplicados ao IPVA sào desconsiderados no cálculo.</li>
-                    <li>A depreciação dos veículos são aplicados em seus menores valores.</li>
-                    <li>Prováveis veículos adquiridos futuramente ou transferências realizadas não são consideradas no cálculo da simulação.</li>
-                  </ul>
-              </div>
-              <dialogDetails :detalhes="this.calculoDet" />
-              <v-btn variant="text" @click="newCalculo()" class="text-caption">nova simulação</v-btn>
             </div>
+            <dialogDetails :detalhes="this.calculoDet" />
+            <v-btn variant="text" @click="newCalculo()" class="text-caption">nova simulação</v-btn>
           </div>
-         </div>
+        </div>
+        </div>
+        <div class="tab-content-3" v-if="tab == 3">
+          <juros />
+        </div>
       </div>
     </v-responsive>
   </v-container>
@@ -298,15 +303,15 @@
 <script>
   import { mask } from 'vue-the-mask'
   import { useVeiculoStore  } from '@/stores/veiculosStore'
-   import {VMoney} from 'v-money'
+  import {VMoney} from 'v-money'
 
-  const veiculosStore = useVeiculoStore() 
+  const veiculosStore = useVeiculoStore()
 
   export default {
     directives:{ mask, money: VMoney },
     data(){
       return{
-        efeito: false, 
+        efeito: false,
         efeito2:false,
         tab: 1,
         parametros: [
@@ -397,11 +402,11 @@
         this.veiculosAdds.forEach( x => {
           x.parametros.forEach(p => {
             let object = {
-              type: x.id, 
+              type: x.id,
               parameter: p.param ? 'lte' : 'gt',
               value: (parseFloat(p.valor.replace(/\D/g, '')) / 100 ).toFixed(2),
               percent: p.aliquota.replace(',', '.') * 0.01
-  
+
             }
             console.log(object.parameter);
             rules.push(object)
@@ -464,7 +469,7 @@
           } else {
               this.veiculosAdds.push(this.tipoSelect)
           }
-          
+
         }
       },
       validarFormulario(){
@@ -487,9 +492,9 @@
                 if(!novoObjeto.param && ultimoObjeto.param && novoObjeto.valor > ultimoObjeto.valor) return 'Existem faixas de valores não parametrizados.'
           }
 
-        } 
+        }
 
-        
+
       },
 
 
@@ -512,7 +517,7 @@
       copyLast(){
         const index = this.tipoSelect.parametros.length - 1
         const indexcopy = this.tipoSelect.parametros.length - 2
-        this.tipoSelect.parametros[index] = { 
+        this.tipoSelect.parametros[index] = {
           valor: this.tipoSelect.parametros[indexcopy].valor,
           aliquota: null,
           param: false
