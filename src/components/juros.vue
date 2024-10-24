@@ -136,37 +136,37 @@
           ></v-checkbox>
 
           <div>
-            <h4 class="text-h5 my-3 bg-grey px-2 d-flex align-center"> <v-icon class="mr-1" size="1.5rem">mdi-calculator-variant-outline</v-icon>Cálculo Padrão</h4>
+            <h4 class="text-h5 my-3 px-2 d-flex align-center"> <v-icon class="mr-1" size="1.5rem">mdi-calculator-variant-outline</v-icon>Cálculo Padrão</h4>
             <div class="pa-2">
               <v-row>
-                <v-col cols="3">Débito</v-col>
-                <v-col cols="3">Inicial</v-col>
-                <v-col cols="3">Atualizado</v-col>
-                <v-col cols="3" v-if="refis">Com benefício</v-col>
+                <v-col cols="2" sm="3" class="bg-teal d-none d-sm-flex">Débito</v-col>
+                <v-col cols="4" sm="3" class="bg-teal">Inicial</v-col>
+                <v-col cols="4" sm="3" class="bg-teal">Atualizado</v-col>
+                <v-col cols="4" sm="3" v-if="refis" class="bg-teal">Benefício</v-col>
               </v-row>
               <v-row>
-                <v-col cols="3">Principal</v-col>
-                <v-col cols="3">{{ dados.principal }}</v-col>
-                <v-col cols="3">{{ dados.principal }}</v-col>
-                <v-col cols="3" v-if="refis">{{ dados.principal }}</v-col>
+                <v-col cols="2" sm="3" class="d-none d-sm-flex">Principal</v-col>
+                <v-col cols="4" sm="3">{{ dados.principal }}</v-col>
+                <v-col cols="4" sm="3">{{ dados.principal }}</v-col>
+                <v-col cols="4" sm="3" v-if="refis">{{ dados.principal }}</v-col>
               </v-row>
               <v-row>
-                <v-col cols="3">Multa</v-col>
-                <v-col cols="3">{{ dados.multa}}</v-col>
-                <v-col cols="3">{{ dados.multa}}</v-col>
-                <v-col cols="3" v-if="refis"> {{ formatarParaReal(valor_multa_beneficio) }}</v-col>
+                <v-col cols="2" sm="3" class="d-none d-sm-flex">Multa</v-col>
+                <v-col cols="4" sm="3">{{ dados.multa}}</v-col>
+                <v-col cols="4" sm="3">{{ dados.multa}}</v-col>
+                <v-col cols="4" sm="3" v-if="refis"> {{ formatarParaReal(valor_multa_beneficio) }}</v-col>
               </v-row>
               <v-row>
-                <v-col cols="3">Juros</v-col>
-                <v-col cols="3">{{ dados.juros }}</v-col>
-                <v-col cols="3">{{ formatarParaReal(juros_corrigido) }}</v-col>
-                <v-col cols="3" v-if="refis">{{ formatarParaReal(valor_juros_beneficio) }}</v-col>
+                <v-col cols="2" sm="3" class="d-none d-sm-flex">Juros</v-col>
+                <v-col cols="4" sm="3" >{{ dados.juros }}</v-col>
+                <v-col cols="4" sm="3">{{ formatarParaReal(juros_corrigido) }}</v-col>
+                <v-col cols="4" sm="3" v-if="refis">{{ formatarParaReal(valor_juros_beneficio) }}</v-col>
               </v-row>
               <v-row>
-                <v-col cols="3">TOTAL</v-col>
-                <v-col cols="3">{{ formatarParaReal(valor_debito) }}</v-col>
-                <v-col cols="3">{{ formatarParaReal(valor_total_atualizado) }}</v-col>
-                <v-col cols="3" v-if="refis">{{ formatarParaReal(valor_total_com_beneficio) }}</v-col>
+                <v-col cols="2" sm="3" class="d-none d-sm-flex">TOTAL</v-col>
+                <v-col cols="4" sm="3">{{ formatarParaReal(valor_debito) }}</v-col>
+                <v-col cols="4" sm="3">{{ formatarParaReal(valor_total_atualizado) }}</v-col>
+                <v-col cols="4" sm="3" v-if="refis">{{ formatarParaReal(valor_total_com_beneficio) }}</v-col>
               </v-row>
             </div>
           </div>
@@ -212,18 +212,19 @@ const msg_erro = ref(null)
 
 
 const dados = ref({
-  principal: '10000.00',
-  juros: '10000.00',
-  multa: '10000.00',
-  date_vcmto: '2020-01-01',
+  principal: null,
+  juros: null,
+  multa: null,
+  date_vcmto: null,
   date_calculo: dataFormatada,
-  red_multa: 9000,
-  red_juros:  9000
+  red_multa: null,
+  red_juros:  null
 })
 
 const aliquotas_red = ref([
   {label: '90%', value: 9000},
-  {label: '95%', value: 9500}
+  {label: '95%', value: 9500},
+  {label: '100%', value: 10000}
 ])
 
 const valor_debito = computed(() => {

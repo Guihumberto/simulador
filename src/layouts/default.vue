@@ -4,7 +4,8 @@
       <div class="headerbar bg-primary">
         <div class="header">
           <div class="mr-2">SEFAZ MA</div>
-          <v-btn @click="theme = !theme" variant="text" :icon="theme ? 'mdi-lightbulb':'mdi-lightbulb-on-10'"></v-btn>
+          <v-btn @click="theme = !theme" variant="text" :icon="theme ?
+          'mdi-lightbulb':'mdi-lightbulb-on-10'"></v-btn>
         </div>
       </div>
       <router-view />
@@ -17,8 +18,8 @@
 <script setup>
   import { useVeiculoStore  } from '@/stores/veiculosStore'
   import {ref, computed} from 'vue'
-  
-  const veiculosStore = useVeiculoStore() 
+
+  const veiculosStore = useVeiculoStore()
 
   const load = computed(()=> veiculosStore.readLoad)
 

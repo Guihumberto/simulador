@@ -1,9 +1,6 @@
 <template>
-  <v-container class="fill-height">
-    <v-responsive
-      class="align-centerfill-height mx-auto mt-10"
-      max-width="900"
-    >
+  <div class="container">
+    <div class="wrapper_content">
       <div class="imgInit" :class="efeito ? 'upDIv':''">
         <v-img
           class="mb-4"
@@ -296,8 +293,8 @@
           <juros />
         </div>
       </div>
-    </v-responsive>
-  </v-container>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -576,6 +573,19 @@
 </script>
 
 <style>
+.container{
+  width: min(800px, 100%);
+  margin-inline: auto;
+  min-height: 80vh;
+  margin-top: 5rem;
+}
+.wrapper_content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 1rem;;
+}
 .imgInit{
   opacity: 0;
   transition: .5s ease-in-out;
