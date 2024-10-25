@@ -1,6 +1,6 @@
 <template>
-  <div class="container bg-red">
-    <div class="wrapper_content bg-green">
+  <div class="container">
+    <div class="wrapper_content">
       <div class="imgInit" :class="efeito ? 'upDIv':''">
         <img
           class="mb-4"
@@ -585,10 +585,12 @@
 .container{
   min-height: 80vh;
   margin-top: 3rem;
+  display: flex;
+  justify-content: center;
 }
 .wrapper_content{
   width: min(900px, 100%);
-  margin-inline: auto;
+  /* margin-inline: auto; */
   display: flex;
   justify-content: center;
   align-items: flex-start;
