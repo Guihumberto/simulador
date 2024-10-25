@@ -627,7 +627,7 @@
   transition: .7s ease-in-out;
 }
 .upForm{
-  width: min(900px, 100%);
+  width: min(100%, 800px,);
   margin-inline: 0 auto;
   opacity: 0;
   transition: 1s ease-in-out;

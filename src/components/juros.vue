@@ -365,7 +365,10 @@ const valida_data =(start, end) => {
   border: 1px solid grey;
   min-height: 25vh;
   padding: 1rem;
-
+}
+.tabela{
+  overflow-y: hidden;
+  overflow-x: auto;
 }
 @media (max-width: 500px) {
   .v-col-4 {
