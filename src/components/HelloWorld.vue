@@ -590,7 +590,6 @@
 }
 .wrapper_content{
   display: flex;
-  width: 100%;
   justify-content: center;
   align-items: flex-start;
   min-height: 80vh;
@@ -627,7 +626,7 @@
   transition: .7s ease-in-out;
 }
 .upForm{
-  width: min(900px, 100%);
+  width: 100%;
   margin-inline: 0 auto;
   opacity: 0;
   transition: 1s ease-in-out;
