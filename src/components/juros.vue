@@ -12,7 +12,7 @@
                 v-money="moneyOptions"
                 v-model="dados.principal"
                 prepend-inner-icon="mdi-currency-usd"
-                :rules="[rules.required]"
+                :rules="[rules.required, rules.requiprincipal]"
                 clearable
               ></v-text-field>
             </v-col>
@@ -78,14 +78,16 @@
               ></v-text-field>
             </v-col>
           </v-row>
+
           <v-btn variant="text"
+            :disabled="!parseInt(converterParaNumero(dados.juros)) && !parseInt(converterParaNumero(dados.multa))"
             class="mb-2 pa-0"
             color="success"
             @click="refis = !refis" :append-icon="refis ? 'mdi-arrow-down':'mdi-arrow-right'">
             Informar Benefício/Redução</v-btn>
-          <div v-if="refis">
+          <div v-if="refis && (parseInt(converterParaNumero(dados.juros)) || parseInt(converterParaNumero(dados.multa)))">
             <v-row>
-              <v-col cols="12" sm="4">
+              <v-col cols="12" sm="4" v-if="parseInt(converterParaNumero(dados.juros))">
                 <v-text-field
                   label="Desconto Juros"
                   variant="outlined"
@@ -95,13 +97,18 @@
                   clearable
                   v-mask="['###,##', '##,##', '#,##']"
                 ></v-text-field>
+                <v-chip-group
+                  selected-class="text-success"
+                  column
+                >
                 <v-chip
                   density="compact"
                   class="mr-1 mb-2"
-                  @click="dados.red_juros = al.value"
+                  @click="dados.red_juros = al.value, result = false"
                   v-for="al, a in  aliquotas_red" :key="a">{{ al.label }}</v-chip>
+              </v-chip-group>
               </v-col>
-              <v-col cols="12" sm="4">
+              <v-col cols="12" sm="4" v-if="parseInt(converterParaNumero(dados.multa))">
                 <v-text-field
                   label="Desconto Multa"
                   variant="outlined"
@@ -111,15 +118,20 @@
                   clearable
                   v-mask="['###,##', '##,##', '#,##']"
                 ></v-text-field>
-                <v-chip
-                  density="compact"
-                  class="mr-1 mb-2"
-                  @click="dados.red_multa = al.value"
-                  v-for="al, a in  aliquotas_red" :key="a">{{ al.label }}</v-chip>
+                <v-chip-group
+                  selected-class="text-success"
+                  column
+                >
+                  <v-chip
+                    density="compact"
+                    class="mr-1 mb-2"
+                    @click="dados.red_multa = al.value, result = false"
+                    v-for="al, a in  aliquotas_red" :key="a">{{ al.label }}</v-chip>
+                </v-chip-group>
               </v-col>
             </v-row>
           </div>
-          <div class="text-left">
+          <div class="text-left mt-5">
             <v-btn @click="limpar()" class="mr-1">Limpar</v-btn>
             <v-btn type="submit" color="primary">calcular</v-btn>
           </div>
@@ -137,36 +149,36 @@
 
           <div>
             <h4 class="text-h5 my-3 px-2 d-flex align-center"> <v-icon class="mr-1" size="1.5rem">mdi-calculator-variant-outline</v-icon>Cálculo Padrão</h4>
-            <div class="pa-2">
+            <div class="pa-2 tabela">
               <v-row>
-                <v-col cols="2" sm="3" class="bg-teal d-none d-sm-flex">Débito</v-col>
-                <v-col cols="4" sm="3" class="bg-teal">Inicial</v-col>
-                <v-col cols="4" sm="3" class="bg-teal">Atualizado</v-col>
+                <v-col cols="2" :sm="refis? 3 : 4" class="bg-teal d-none d-sm-flex">Débito</v-col>
+                <v-col :cols="refis? 4 : 6" :sm="refis? 3 : 4" class="bg-teal">Inicial</v-col>
+                <v-col :cols="refis? 4 : 6" :sm="refis? 3 : 4" class="bg-teal">Atualizado</v-col>
                 <v-col cols="4" sm="3" v-if="refis" class="bg-teal">Benefício</v-col>
               </v-row>
               <v-row>
-                <v-col cols="2" sm="3" class="d-none d-sm-flex">Principal</v-col>
-                <v-col cols="4" sm="3">{{ dados.principal }}</v-col>
-                <v-col cols="4" sm="3">{{ dados.principal }}</v-col>
+                <v-col cols="2" :sm="refis? 3 : 4" class="d-none d-sm-flex">Principal</v-col>
+                <v-col :cols="refis? 4 : 6" :sm="refis? 3 : 4">{{ dados.principal }}</v-col>
+                <v-col :cols="refis? 4 : 6" :sm="refis? 3 : 4">{{ dados.principal }}</v-col>
                 <v-col cols="4" sm="3" v-if="refis">{{ dados.principal }}</v-col>
               </v-row>
-              <v-row>
-                <v-col cols="2" sm="3" class="d-none d-sm-flex">Multa</v-col>
-                <v-col cols="4" sm="3">{{ dados.multa}}</v-col>
-                <v-col cols="4" sm="3">{{ dados.multa}}</v-col>
+              <v-row v-if="parseInt(converterParaNumero(dados.multa))">
+                <v-col cols="2" :sm="refis? 3 : 4" class="d-none d-sm-flex">Multa</v-col>
+                <v-col :cols="refis? 4 : 6" :sm="refis? 3 : 4">{{ dados.multa}}</v-col>
+                <v-col :cols="refis? 4 : 6" :sm="refis? 3 : 4">{{ dados.multa}}</v-col>
                 <v-col cols="4" sm="3" v-if="refis"> {{ formatarParaReal(valor_multa_beneficio) }}</v-col>
               </v-row>
               <v-row>
-                <v-col cols="2" sm="3" class="d-none d-sm-flex">Juros</v-col>
-                <v-col cols="4" sm="3" >{{ dados.juros }}</v-col>
-                <v-col cols="4" sm="3">{{ formatarParaReal(juros_corrigido) }}</v-col>
+                <v-col cols="2" :sm="refis? 3 : 4" class="d-none d-sm-flex">Juros</v-col>
+                <v-col :cols="refis? 4 : 6" :sm="refis? 3 : 4" >{{ dados.juros }}</v-col>
+                <v-col :cols="refis? 4 : 6" :sm="refis? 3 : 4">{{ formatarParaReal(juros_corrigido) }}</v-col>
                 <v-col cols="4" sm="3" v-if="refis">{{ formatarParaReal(valor_juros_beneficio) }}</v-col>
               </v-row>
               <v-row>
-                <v-col cols="2" sm="3" class="d-none d-sm-flex">TOTAL</v-col>
-                <v-col cols="4" sm="3">{{ formatarParaReal(valor_debito) }}</v-col>
-                <v-col cols="4" sm="3">{{ formatarParaReal(valor_total_atualizado) }}</v-col>
-                <v-col cols="4" sm="3" v-if="refis">{{ formatarParaReal(valor_total_com_beneficio) }}</v-col>
+                <v-col cols="2" :sm="refis? 3 : 4" class="bg-teal d-none d-sm-flex">TOTAL</v-col>
+                <v-col :cols="refis? 4 : 6" :sm="refis? 3 : 4" class="bg-teal">{{ formatarParaReal(valor_debito) }}</v-col>
+                <v-col :cols="refis? 4 : 6" :sm="refis? 3 : 4" class="bg-teal">{{ formatarParaReal(valor_total_atualizado) }}</v-col>
+                <v-col cols="4" sm="3" class="bg-teal" v-if="refis">{{ formatarParaReal(valor_total_com_beneficio) }}</v-col>
               </v-row>
             </div>
           </div>
@@ -178,7 +190,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { mask } from 'vue-the-mask'
 import {VMoney} from 'v-money'
 import selic from './../../public/selic.json';
@@ -191,10 +203,7 @@ const dataFormatada = hoje.getFullYear() + '-' + String(hoje.getMonth() + 1).pad
 const rules = {
     required: value => !!value || "campo obrigatório",
     minfield: (v) => (v||'').length >= 3 || "Mínimo 4 caracteres",
-    validarDatas: () => {
-      if (!dados.date_vcmto.value || !dados.date_calculo.value) return true; // Verifica se ambos os campos têm valores
-      return new Date(dados.date_vcmto.value) <= new Date(dados.date_calculo.value) || "Data do Vencimento não pode ser maior que a Data do Cálculo";
-    }
+    requiprincipal: (v) =>  v != 'R$ 0,00' || "campo não pode ser zero."
 }
 
 const moneyOptions = {
@@ -217,9 +226,16 @@ const dados = ref({
   multa: null,
   date_vcmto: null,
   date_calculo: dataFormatada,
-  red_multa: null,
-  red_juros:  null
+  red_multa: "0.00",
+  red_juros:  "0.00"
 })
+
+
+watch(dados.value.juros, (newjuros) => {
+  console.log("oi")
+})
+
+
 
 const aliquotas_red = ref([
   {label: '90%', value: 9000},
@@ -319,10 +335,13 @@ const valor_multa_beneficio = computed(()=> {
 })
 
 const valor_juros_beneficio = computed(()=> {
+  if(parseInt(converterParaNumero(dados.value.red_juros))) {
     const valor = juros_corrigido.value
     let percentual = 100 - dados.value.red_juros.replace(',', '.')
     const valorfinal = (valor * percentual/100).toFixed(2)
     return valorfinal
+  }
+  return 0
 })
 
 const valor_total_com_beneficio = computed(() => {
@@ -347,5 +366,10 @@ const valida_data =(start, end) => {
   min-height: 25vh;
   padding: 1rem;
 
+}
+@media (max-width: 500px) {
+  .v-col-4 {
+    font-size: .8rem;
+  }
 }
 </style>

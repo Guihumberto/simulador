@@ -2,7 +2,7 @@
   <div class="container">
     <div class="wrapper_content">
       <div class="imgInit" :class="efeito ? 'upDIv':''">
-        <v-img
+        <img
           class="mb-4"
           height="150"
           src="@/assets/brasao.png"
@@ -23,9 +23,16 @@
       </div>
       <div :class="efeito2 ? 'upForm': 'tabsWrapper'">
         <div class="title_trib">
-          <div class="mb-5">
-            <h2>Simulador SEFAZ</h2>
-            <p>Ferramenta de dados e simulação</p>
+          <div class="mb-5 d-flex align-center">
+            <img
+              class="mb-4"
+              height="60"
+              src="@/assets/brasao.png"
+            />
+            <div class="ml-2" style="line-height: 1.2;">
+              <h2>Simulador SEFAZ</h2>
+              <p>Ferramenta de dados e simulação</p>
+            </div>
           </div>
           <div class="tabs">
             <input @click="tab = 1" type="radio" id="ipva" name="tabs" checked>
@@ -290,6 +297,8 @@
         </div>
         </div>
         <div class="tab-content-3" v-if="tab == 3">
+           <h2 class="d-flex align-center"><v-icon size="1.5rem" class="mr-2">mdi-calculator</v-icon>Calculadora de débito</h2>
+          <small class="text-caption">Selic atualizada em 25/10/2024.</small>
           <juros />
         </div>
       </div>
@@ -581,8 +590,9 @@
 }
 .wrapper_content{
   display: flex;
+  width: 100%;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 80vh;
   padding: 1rem;;
 }
@@ -590,6 +600,11 @@
   opacity: 0;
   transition: .5s ease-in-out;
   animation: aparecer .5s ease-in forwards;
+  height: calc(100vh - 160px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
 }
 .upDIv{
   transition: .5s ease;
@@ -629,7 +644,7 @@
 }
 .tabs{
   display: flex;
-  height: 3.5rem;
+  height: 2rem;
   border-block-end: 1px solid #e9ebec;
   width: 200px
 }
