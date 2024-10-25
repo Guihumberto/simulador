@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="wrapper_content bg-red">
+    <div class="wrapper_content">
       <div class="imgInit" :class="efeito ? 'upDIv':''">
         <img
           class="mb-4"
@@ -21,7 +21,7 @@
           <v-btn :loading="load" @click="entrar()" class="mt-5" variant="outlined" prepend-icon="mdi-calculator-variant">ENTRAR</v-btn>
         </div>
       </div>
-      <div :class="efeito2 ? 'upForm bg-green': 'tabsWrapper'">
+      <div :class="efeito2 ? 'upForm': 'tabsWrapper'">
         <div class="title_trib">
           <div class="mb-5 d-flex align-center">
             <img
@@ -621,6 +621,7 @@
         opacity: 0;
         transform: translateY(-200px);
         display: none;
+        width: 0;
     }
 }
 .tabsWrapper{
@@ -753,7 +754,7 @@
   height: 50vh;
 }
 .tab-content-3{
-
+  width: 870px;
 }
 @media (max-width: 900px) {
   .title_trib{
@@ -804,6 +805,9 @@
   }
   .content_itcd{
     margin-right: 1rem;
+  }
+  .tab-content-3{
+    width: 100%;
   }
 }
 .texth3{

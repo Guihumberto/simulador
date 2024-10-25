@@ -1,6 +1,31 @@
 <template>
-  <div class="content">
-      <div>
+  <div class="content_wrapper">
+      <div class="content">
+        <div class="title_trib">
+          <div class="mb-5 d-flex align-center">
+            <img
+              class="mb-4"
+              height="60"
+              src="@/assets/brasao.png"
+            />
+            <div class="ml-2" style="line-height: 1.2;">
+              <h2>Simulador SEFAZ</h2>
+              <p>Ferramenta de dados e simulação</p>
+            </div>
+          </div>
+          <div class="tabs">
+            <input @click="tab = 1" type="radio" id="ipva" name="tabs">
+            <label for="ipva">IPVA</label>
+            <!-- <input @click="tab = 2" type="radio" id="itcd" name="tabs">
+            <label for="itcd">ITCD</label> -->
+            <input @click="tab = 3" type="radio" id="juros" name="tabs" checked>
+            <label for="juros">JUROS</label>
+          </div>
+        </div>
+        <div class="mb-5">
+          <h2 class="d-flex align-center"><v-icon size="1.5rem" class="mr-2">mdi-calculator</v-icon>Calculadora de débito</h2>
+          <small class="text-caption">Selic atualizada em 25/10/2024.</small>
+        </div>
         <v-form @submit.prevent="calcular()" ref="form">
           <v-row>
             <v-col cols="12" sm="4">
@@ -131,7 +156,7 @@
               </v-col>
             </v-row>
           </div>
-          <div class="text-left mt-5">
+          <div class="btns_form">
             <v-btn @click="limpar()" class="mr-1">Limpar</v-btn>
             <v-btn type="submit" color="primary">calcular</v-btn>
           </div>
@@ -361,7 +386,13 @@ const valida_data =(start, end) => {
 </script>
 
 <style lang="scss" scoped>
+.content_wrapper{
+
+}
 .content{
+  margin-top: 5rem;
+  width: min(900px, 100%);
+  margin-inline: auto;
   border: 1px solid grey;
   min-height: 25vh;
   padding: 1rem;
@@ -370,9 +401,55 @@ const valida_data =(start, end) => {
   overflow-y: hidden;
   overflow-x: auto;
 }
+.btns_form{
+  text-align: left;
+  margin-top: 2rem
+}
+.title_trib {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 1s ease-in-out;
+  width: 100%;
+}
+.tabs{
+  display: flex;
+  height: 2rem;
+  border-block-end: 1px solid #e9ebec;
+  width: 200px
+}
+.tabs input {
+  display: none;
+
+}
+.tabs label{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #656d7b;
+  cursor: pointer;
+  transition: color 0.5s ease-in-out;
+}
+.tabs input:checked + label {
+  color: red;
+}
+.tabs::after {
+  pointer-events: none;
+  position: absolute;
+  content: "";
+  inset: 0;
+  width: 100%;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
 @media (max-width: 500px) {
   .v-col-4 {
     font-size: .8rem;
+  }
+  .btns_form{
+    text-align: center;
+    margin-top: 2rem
   }
 }
 </style>
