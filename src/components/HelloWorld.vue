@@ -804,8 +804,12 @@
   transition: 1s ease;
 }
 @media (max-width: 606px) {
+  .title_trib{
+    justify-content: center;
+    align-items: center;
+  }
   .simulador, .resultado {
-    width: 370px;
+    max-width: 370px;
   }
 }
 @media (max-width: 400px){
