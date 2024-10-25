@@ -583,7 +583,7 @@
 
 <style>
 .container{
-  width: min(100%, 800px);
+  width: min(900px, 100%);
   margin-inline: auto;
   min-height: 80vh;
   margin-top: 5rem;
@@ -627,7 +627,7 @@
   transition: .7s ease-in-out;
 }
 .upForm{
-  width: min(100%, 800px,);
+  width: min(900px, 100%);
   margin-inline: 0 auto;
   opacity: 0;
   transition: 1s ease-in-out;
