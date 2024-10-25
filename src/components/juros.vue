@@ -443,6 +443,22 @@ const valida_data =(start, end) => {
   width: 100%;
   border-radius: 0.5rem 0.5rem 0 0;
 }
+@media (max-width: 900px) {
+  .title_trib{
+    flex-direction: column;
+    align-items: start;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 606px) {
+  .title_trib{
+    justify-content: center;
+    align-items: center;
+  }
+}
 @media (max-width: 500px) {
   .v-col-4 {
     font-size: .8rem;
