@@ -583,7 +583,7 @@
 
 <style>
 .container{
-  width: min(800px, 100%);
+  width: min(100%, 800px);
   margin-inline: auto;
   min-height: 80vh;
   margin-top: 5rem;
