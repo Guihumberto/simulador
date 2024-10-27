@@ -219,7 +219,9 @@ const dataFormatada = hoje.getFullYear() + '-' + String(hoje.getMonth() + 1).pad
 
 const scrollToElement = (item) => {
   const element = document.getElementById(item)
-  element.scrollIntoView({ behavior: 'smooth' });
+  setTimeout(()=> {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }, 500)
 }
 
 const rules = {
