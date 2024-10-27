@@ -302,15 +302,15 @@ function datam(data) {
 const calcular = async () => {
     msg_erro.value = null
     const { valid } = await form.value.validate()
+    um_por_cento.value = true
     if(valid){
-        if(valida_data(dados.value.date_vcmto, dados.value.date_calculo)){
+        if(valida_data(dados.value.date_vcmto, dados.value.date_calculo) ){
           um_por_cento.value = false
           selic_acumulada.value = 0.00
           scrollToElement('resultado')
           return
-        } else {
-          um_por_cento.value = true
-        }
+        } 
+        if(datasIguais()) um_por_cento.value = false
         result.value= true
         const start = datam(dados.value.date_vcmto ).split('-').map(item => parseInt(item)).slice(0,2).join('')
         const end = datam(dados.value.date_calculo ).split('-').map(item => parseInt(item)).slice(0,2).join('')
@@ -381,6 +381,15 @@ const valida_data =(start, end) => {
   const dataEnd = new Date(end);
 
   return dataStart > dataEnd;
+}
+
+const datasIguais = () => {
+  // Converte as strings para objetos Date
+  const date1 = new Date(dados.value.date_calculo);
+  const date2 = new Date(dados.value.date_vcmto);
+
+  // Compara os tempos em milissegundos
+  return date1.getTime() === date2.getTime();
 }
 
 </script>
