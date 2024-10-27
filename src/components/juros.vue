@@ -304,9 +304,12 @@ const calcular = async () => {
     const { valid } = await form.value.validate()
     if(valid){
         if(valida_data(dados.value.date_vcmto, dados.value.date_calculo)){
-          msg_erro.value = "A data do vencimento não poderá ser maior que a data do cálculo"
-          result.value = false
+          um_por_cento.value = false
+          selic_acumulada.value = 0.00
+          scrollToElement('resultado')
           return
+        } else {
+          um_por_cento.value = true
         }
         result.value= true
         const start = datam(dados.value.date_vcmto ).split('-').map(item => parseInt(item)).slice(0,2).join('')
@@ -360,13 +363,10 @@ const valor_multa_beneficio = computed(()=> {
 })
 
 const valor_juros_beneficio = computed(()=> {
-  if(parseInt(converterParaNumero(dados.value.red_juros))) {
-    const valor = juros_corrigido.value
+   const valor = converterParaNumero(dados.value.juros)
     let percentual = 100 - dados.value.red_juros.replace(',', '.')
     const valorfinal = (valor * percentual/100).toFixed(2)
     return valorfinal
-  }
-  return 0
 })
 
 const valor_total_com_beneficio = computed(() => {
