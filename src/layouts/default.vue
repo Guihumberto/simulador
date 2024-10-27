@@ -1,7 +1,7 @@
 <template>
   <v-app :theme="theme ? 'dark':'light'">
     <v-main>
-      <div class="headerbar bg-primary">
+      <div class="headerbar">
         <div class="header">
           <div class="mr-2">SEFAZ MA</div>
           <v-btn @click="theme = !theme" variant="text" :icon="theme ?
@@ -39,6 +39,8 @@
   position: fixed;
   width: 100%;
   z-index: 1;
+  background: #1E3A8A;
+  color: white;
 }
 .header{
   width: min(900px, 100%);

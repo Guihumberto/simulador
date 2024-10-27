@@ -14,8 +14,8 @@
             </div>
           </div>
           <div class="tabs">
-            <input @click="tab = 1" type="radio" id="ipva" name="tabs">
-            <label for="ipva">IPVA</label>
+            <!-- <input @click="tab = 1" type="radio" id="ipva" name="tabs">
+            <label for="ipva">IPVA</label> -->
             <!-- <input @click="tab = 2" type="radio" id="itcd" name="tabs">
             <label for="itcd">ITCD</label> -->
             <input @click="tab = 3" type="radio" id="juros" name="tabs" checked>
@@ -66,16 +66,8 @@
               ></v-text-field>
             </v-col>
           </v-row>
-          <div class="mb-5 ml-1">
-            <v-text-field
-                label="Valor do Débito"
-                variant="solo"
-                density="compact"
-                v-money="moneyOptions"
-                v-model="valor_debito"
-                prepend-inner-icon="mdi-cash-multiple"
-                readonly
-              ></v-text-field>
+          <div class="mb-5 pa-2 text-center" style="background: #4B5563;">
+            <span class="text-grey">Valor Total do Débito: </span><b class="text-white">{{ formatarParaReal(valor_debito) }}</b> 
           </div>
           <v-row>
             <v-col cols="12" sm="4">
@@ -157,13 +149,13 @@
             </v-row>
           </div>
           <div class="btns_form">
-            <v-btn @click="limpar()" class="mr-1">Limpar</v-btn>
-            <v-btn type="submit" color="primary">calcular</v-btn>
+            <v-btn variant="text" @click="limpar()" class="mr-1">Limpar</v-btn>
+            <v-btn variant="flat" type="submit" color="#1E3A8A">calcular</v-btn>
           </div>
         </v-form>
 
         <v-alert v-if="msg_erro" type="error" class="mt-5" :text="msg_erro"></v-alert>
-
+        <span id="resultado"></span>
         <div v-if="result && !msg_erro" class="border mt-2 pa-2">
           <p class="ml-3 font-weight-bold">Selic Acumulada: {{ (selic_final *100).toFixed(2) }} % </p>
           <v-checkbox
@@ -224,6 +216,11 @@ import { computed } from 'vue';
 const form = ref(null)
 const hoje = new Date();
 const dataFormatada = hoje.getFullYear() + '-' + String(hoje.getMonth() + 1).padStart(2, '0') + '-' + String(hoje.getDate()).padStart(2, '0');
+
+const scrollToElement = (item) => {
+  const element = document.getElementById(item)
+  element.scrollIntoView({ behavior: 'smooth' });
+}
 
 const rules = {
     required: value => !!value || "campo obrigatório",
@@ -316,6 +313,7 @@ const calcular = async () => {
         const acum2 = selic.find(x => x.Periodo == end).selic_acumulada
 
         selic_acumulada.value = acum1 - acum2
+        scrollToElement('resultado')
     }
 }
 
@@ -387,10 +385,10 @@ const valida_data =(start, end) => {
 
 <style lang="scss" scoped>
 .content_wrapper{
-
+  margin: 0 .3rem;
+  margin-top: 4rem;
 }
 .content{
-  margin-top: 5rem;
   width: min(900px, 100%);
   margin-inline: auto;
   border: 1px solid grey;
