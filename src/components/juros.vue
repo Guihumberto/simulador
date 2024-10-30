@@ -1,8 +1,9 @@
 <template>
   <div class="content_wrapper">
+    <span class="animate bg"></span>
       <div class="content">
         <div class="title_trib">
-          <div class="mb-5 d-flex align-center">
+          <div class="mb-5 d-flex align-center" style="position: relative;">
             <img
               class="mb-4"
               height="60"
@@ -12,22 +13,25 @@
               <h2>Simulador SEFAZ</h2>
               <p>Ferramenta de dados e simulação</p>
             </div>
+            <span class="animate" style="background: #121212; --i:3;"></span>
           </div>
-          <div class="tabs">
+          <div class="tabs" style="position: relative">
             <!-- <input @click="tab = 1" type="radio" id="ipva" name="tabs">
             <label for="ipva">IPVA</label> -->
             <!-- <input @click="tab = 2" type="radio" id="itcd" name="tabs">
             <label for="itcd">ITCD</label> -->
             <input @click="tab = 3" type="radio" id="juros" name="tabs" checked>
             <label for="juros">JUROS</label>
+            <span class="animate" style="background: #121212; --i:4;"></span>
           </div>
         </div>
-        <div class="mb-5">
+        <div class="mb-5" style="position: relative">
           <h2 class="d-flex align-center"><v-icon size="1.5rem" class="mr-2">mdi-calculator</v-icon>Calculadora de débito</h2>
           <small class="text-caption">Selic atualizada em 25/10/2024.</small>
+          <span class="animate" style="background: #121212; --i:5;"></span>
         </div>
         <v-form @submit.prevent="calcular()" ref="form">
-          <v-row>
+          <v-row style="position: relative">
             <v-col cols="12" sm="4">
               <v-text-field
                 label="Principal"
@@ -51,6 +55,7 @@
                 v-model="dados.juros"
                 prepend-inner-icon="mdi-currency-usd"
                 clearable
+                hide-details
               ></v-text-field>
             </v-col>
             <v-col cols="12" sm="4">
@@ -65,11 +70,12 @@
                 clearable
               ></v-text-field>
             </v-col>
+            <span class="animate" style="background: #121212; --i:6;"></span>
           </v-row>
           <div class="mb-5 pa-2 text-center" style="background: #4B5563;">
             <span class="text-grey">Valor Total do Débito: </span><b class="text-white">{{ formatarParaReal(valor_debito) }}</b> 
           </div>
-          <v-row>
+          <v-row style="position: relative">
             <v-col cols="12" sm="4">
               <v-text-field
                 label="Data do Vencimento"
@@ -94,6 +100,7 @@
                 clearable
               ></v-text-field>
             </v-col>
+            <span class="animate" style="background: #121212; --i:7;"></span>
           </v-row>
 
           <v-btn variant="text"
@@ -101,7 +108,9 @@
             class="mb-2 pa-0"
             color="success"
             @click="refis = !refis" :append-icon="refis ? 'mdi-arrow-down':'mdi-arrow-right'">
-            Informar Benefício/Redução</v-btn>
+            Informar Benefício/Redução
+            <span class="animate" style="background: #121212; --i:7;"></span>
+          </v-btn>
           <div v-if="refis && (parseInt(converterParaNumero(dados.juros)) || parseInt(converterParaNumero(dados.multa)))">
             <v-row>
               <v-col cols="12" sm="4" v-if="parseInt(converterParaNumero(dados.juros))">
@@ -151,6 +160,7 @@
           <div class="btns_form">
             <v-btn variant="text" @click="limpar()" class="mr-1">Limpar</v-btn>
             <v-btn variant="flat" type="submit" color="#1E3A8A">calcular</v-btn>
+            <span class="animate" style="background: #121212; --i:8;"></span>
           </div>
         </v-form>
 
@@ -396,6 +406,7 @@ const datasIguais = () => {
 
 <style lang="scss" scoped>
 .content_wrapper{
+  position: relative;
   margin: 0 .3rem;
   margin-top: 4rem;
 }
@@ -411,6 +422,7 @@ const datasIguais = () => {
   overflow-x: auto;
 }
 .btns_form{
+  position: relative;
   text-align: left;
   margin-top: 2rem
 }
@@ -424,7 +436,7 @@ const datasIguais = () => {
 .tabs{
   display: flex;
   height: 2rem;
-  border-block-end: 1px solid #e9ebec;
+  // border-block-end: 1px solid #e9ebec;
   width: 200px
 }
 .tabs input {
@@ -464,6 +476,7 @@ const datasIguais = () => {
 }
 @media (max-width: 606px) {
   .title_trib{
+    display: none;
     justify-content: center;
     align-items: center;
   }
