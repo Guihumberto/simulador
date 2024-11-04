@@ -1,0 +1,2508 @@
+[
+    {
+     "Ano": 1995,
+     "Mês": 1,
+     "Periodo": "19951",
+     "SELIC": 0,
+     "selic_acumulada": 4.1959
+    },
+    {
+     "Ano": 1995,
+     "Mês": 2,
+     "Periodo": "19952",
+     "SELIC": 0.0363,
+     "selic_acumulada": 4.1596
+    },
+    {
+     "Ano": 1995,
+     "Mês": 3,
+     "Periodo": "19953",
+     "SELIC": 0.026,
+     "selic_acumulada": 4.1336
+    },
+    {
+     "Ano": 1995,
+     "Mês": 4,
+     "Periodo": "19954",
+     "SELIC": 0.0426,
+     "selic_acumulada": 4.091
+    },
+    {
+     "Ano": 1995,
+     "Mês": 5,
+     "Periodo": "19955",
+     "SELIC": 0.0425,
+     "selic_acumulada": 4.0485
+    },
+    {
+     "Ano": 1995,
+     "Mês": 6,
+     "Periodo": "19956",
+     "SELIC": 0.0404,
+     "selic_acumulada": 4.0081
+    },
+    {
+     "Ano": 1995,
+     "Mês": 7,
+     "Periodo": "19957",
+     "SELIC": 0.0402,
+     "selic_acumulada": 3.9679
+    },
+    {
+     "Ano": 1995,
+     "Mês": 8,
+     "Periodo": "19958",
+     "SELIC": 0.0384,
+     "selic_acumulada": 3.9295
+    },
+    {
+     "Ano": 1995,
+     "Mês": 9,
+     "Periodo": "19959",
+     "SELIC": 0.0332,
+     "selic_acumulada": 3.8963
+    },
+    {
+     "Ano": 1995,
+     "Mês": 10,
+     "Periodo": "199510",
+     "SELIC": 0.0309,
+     "selic_acumulada": 3.8654
+    },
+    {
+     "Ano": 1995,
+     "Mês": 11,
+     "Periodo": "199511",
+     "SELIC": 0.0288,
+     "selic_acumulada": 3.8366000000000002
+    },
+    {
+     "Ano": 1995,
+     "Mês": 12,
+     "Periodo": "199512",
+     "SELIC": 0.0278,
+     "selic_acumulada": 3.8088
+    },
+    {
+     "Ano": 1996,
+     "Mês": 1,
+     "Periodo": "19961",
+     "SELIC": 0.0258,
+     "selic_acumulada": 3.7830000000000004
+    },
+    {
+     "Ano": 1996,
+     "Mês": 2,
+     "Periodo": "19962",
+     "SELIC": 0.0235,
+     "selic_acumulada": 3.7595000000000005
+    },
+    {
+     "Ano": 1996,
+     "Mês": 3,
+     "Periodo": "19963",
+     "SELIC": 0.0222,
+     "selic_acumulada": 3.7373000000000003
+    },
+    {
+     "Ano": 1996,
+     "Mês": 4,
+     "Periodo": "19964",
+     "SELIC": 0.0207,
+     "selic_acumulada": 3.7166
+    },
+    {
+     "Ano": 1996,
+     "Mês": 5,
+     "Periodo": "19965",
+     "SELIC": 0.0201,
+     "selic_acumulada": 3.6965000000000003
+    },
+    {
+     "Ano": 1996,
+     "Mês": 6,
+     "Periodo": "19966",
+     "SELIC": 0.0198,
+     "selic_acumulada": 3.6767000000000003
+    },
+    {
+     "Ano": 1996,
+     "Mês": 7,
+     "Periodo": "19967",
+     "SELIC": 0.0193,
+     "selic_acumulada": 3.6574000000000004
+    },
+    {
+     "Ano": 1996,
+     "Mês": 8,
+     "Periodo": "19968",
+     "SELIC": 0.0197,
+     "selic_acumulada": 3.6377000000000006
+    },
+    {
+     "Ano": 1996,
+     "Mês": 9,
+     "Periodo": "19969",
+     "SELIC": 0.019,
+     "selic_acumulada": 3.6187000000000005
+    },
+    {
+     "Ano": 1996,
+     "Mês": 10,
+     "Periodo": "199610",
+     "SELIC": 0.0186,
+     "selic_acumulada": 3.6001000000000003
+    },
+    {
+     "Ano": 1996,
+     "Mês": 11,
+     "Periodo": "199611",
+     "SELIC": 0.018,
+     "selic_acumulada": 3.5821000000000005
+    },
+    {
+     "Ano": 1996,
+     "Mês": 12,
+     "Periodo": "199612",
+     "SELIC": 0.018,
+     "selic_acumulada": 3.5641000000000007
+    },
+    {
+     "Ano": 1997,
+     "Mês": 1,
+     "Periodo": "19971",
+     "SELIC": 0.0173,
+     "selic_acumulada": 3.5468000000000006
+    },
+    {
+     "Ano": 1997,
+     "Mês": 2,
+     "Periodo": "19972",
+     "SELIC": 0.0167,
+     "selic_acumulada": 3.5301000000000005
+    },
+    {
+     "Ano": 1997,
+     "Mês": 3,
+     "Periodo": "19973",
+     "SELIC": 0.0164,
+     "selic_acumulada": 3.5137000000000005
+    },
+    {
+     "Ano": 1997,
+     "Mês": 4,
+     "Periodo": "19974",
+     "SELIC": 0.0166,
+     "selic_acumulada": 3.4971000000000005
+    },
+    {
+     "Ano": 1997,
+     "Mês": 5,
+     "Periodo": "19975",
+     "SELIC": 0.0158,
+     "selic_acumulada": 3.4813000000000005
+    },
+    {
+     "Ano": 1997,
+     "Mês": 6,
+     "Periodo": "19976",
+     "SELIC": 0.0161,
+     "selic_acumulada": 3.4652000000000007
+    },
+    {
+     "Ano": 1997,
+     "Mês": 7,
+     "Periodo": "19977",
+     "SELIC": 0.016,
+     "selic_acumulada": 3.4492000000000007
+    },
+    {
+     "Ano": 1997,
+     "Mês": 8,
+     "Periodo": "19978",
+     "SELIC": 0.0159,
+     "selic_acumulada": 3.433300000000001
+    },
+    {
+     "Ano": 1997,
+     "Mês": 9,
+     "Periodo": "19979",
+     "SELIC": 0.0159,
+     "selic_acumulada": 3.417400000000001
+    },
+    {
+     "Ano": 1997,
+     "Mês": 10,
+     "Periodo": "199710",
+     "SELIC": 0.0167,
+     "selic_acumulada": 3.400700000000001
+    },
+    {
+     "Ano": 1997,
+     "Mês": 11,
+     "Periodo": "199711",
+     "SELIC": 0.0304,
+     "selic_acumulada": 3.3703000000000007
+    },
+    {
+     "Ano": 1997,
+     "Mês": 12,
+     "Periodo": "199712",
+     "SELIC": 0.0297,
+     "selic_acumulada": 3.3406000000000007
+    },
+    {
+     "Ano": 1998,
+     "Mês": 1,
+     "Periodo": "19981",
+     "SELIC": 0.0267,
+     "selic_acumulada": 3.3139000000000007
+    },
+    {
+     "Ano": 1998,
+     "Mês": 2,
+     "Periodo": "19982",
+     "SELIC": 0.0213,
+     "selic_acumulada": 3.2926000000000006
+    },
+    {
+     "Ano": 1998,
+     "Mês": 3,
+     "Periodo": "19983",
+     "SELIC": 0.022,
+     "selic_acumulada": 3.270600000000001
+    },
+    {
+     "Ano": 1998,
+     "Mês": 4,
+     "Periodo": "19984",
+     "SELIC": 0.0171,
+     "selic_acumulada": 3.2535000000000007
+    },
+    {
+     "Ano": 1998,
+     "Mês": 5,
+     "Periodo": "19985",
+     "SELIC": 0.0163,
+     "selic_acumulada": 3.2372000000000005
+    },
+    {
+     "Ano": 1998,
+     "Mês": 6,
+     "Periodo": "19986",
+     "SELIC": 0.016,
+     "selic_acumulada": 3.2212000000000005
+    },
+    {
+     "Ano": 1998,
+     "Mês": 7,
+     "Periodo": "19987",
+     "SELIC": 0.017,
+     "selic_acumulada": 3.2042000000000006
+    },
+    {
+     "Ano": 1998,
+     "Mês": 8,
+     "Periodo": "19988",
+     "SELIC": 0.0148,
+     "selic_acumulada": 3.1894000000000005
+    },
+    {
+     "Ano": 1998,
+     "Mês": 9,
+     "Periodo": "19989",
+     "SELIC": 0.0249,
+     "selic_acumulada": 3.1645000000000003
+    },
+    {
+     "Ano": 1998,
+     "Mês": 10,
+     "Periodo": "199810",
+     "SELIC": 0.0294,
+     "selic_acumulada": 3.1351000000000004
+    },
+    {
+     "Ano": 1998,
+     "Mês": 11,
+     "Periodo": "199811",
+     "SELIC": 0.0263,
+     "selic_acumulada": 3.1088000000000005
+    },
+    {
+     "Ano": 1998,
+     "Mês": 12,
+     "Periodo": "199812",
+     "SELIC": 0.024,
+     "selic_acumulada": 3.0848000000000004
+    },
+    {
+     "Ano": 1999,
+     "Mês": 1,
+     "Periodo": "19991",
+     "SELIC": 0.0218,
+     "selic_acumulada": 3.0630000000000006
+    },
+    {
+     "Ano": 1999,
+     "Mês": 2,
+     "Periodo": "19992",
+     "SELIC": 0.0238,
+     "selic_acumulada": 3.0392000000000006
+    },
+    {
+     "Ano": 1999,
+     "Mês": 3,
+     "Periodo": "19993",
+     "SELIC": 0.0333,
+     "selic_acumulada": 3.0059000000000005
+    },
+    {
+     "Ano": 1999,
+     "Mês": 4,
+     "Periodo": "19994",
+     "SELIC": 0.0235,
+     "selic_acumulada": 2.9824000000000006
+    },
+    {
+     "Ano": 1999,
+     "Mês": 5,
+     "Periodo": "19995",
+     "SELIC": 0.0202,
+     "selic_acumulada": 2.9622000000000006
+    },
+    {
+     "Ano": 1999,
+     "Mês": 6,
+     "Periodo": "19996",
+     "SELIC": 0.0167,
+     "selic_acumulada": 2.9455000000000005
+    },
+    {
+     "Ano": 1999,
+     "Mês": 7,
+     "Periodo": "19997",
+     "SELIC": 0.0166,
+     "selic_acumulada": 2.9289000000000005
+    },
+    {
+     "Ano": 1999,
+     "Mês": 8,
+     "Periodo": "19998",
+     "SELIC": 0.0157,
+     "selic_acumulada": 2.9132000000000007
+    },
+    {
+     "Ano": 1999,
+     "Mês": 9,
+     "Periodo": "19999",
+     "SELIC": 0.0149,
+     "selic_acumulada": 2.8983000000000008
+    },
+    {
+     "Ano": 1999,
+     "Mês": 10,
+     "Periodo": "199910",
+     "SELIC": 0.0138,
+     "selic_acumulada": 2.884500000000001
+    },
+    {
+     "Ano": 1999,
+     "Mês": 11,
+     "Periodo": "199911",
+     "SELIC": 0.0139,
+     "selic_acumulada": 2.870600000000001
+    },
+    {
+     "Ano": 1999,
+     "Mês": 12,
+     "Periodo": "199912",
+     "SELIC": 0.016,
+     "selic_acumulada": 2.854600000000001
+    },
+    {
+     "Ano": 2000,
+     "Mês": 1,
+     "Periodo": "20001",
+     "SELIC": 0.0146,
+     "selic_acumulada": 2.8400000000000007
+    },
+    {
+     "Ano": 2000,
+     "Mês": 2,
+     "Periodo": "20002",
+     "SELIC": 0.0145,
+     "selic_acumulada": 2.825500000000001
+    },
+    {
+     "Ano": 2000,
+     "Mês": 3,
+     "Periodo": "20003",
+     "SELIC": 0.0145,
+     "selic_acumulada": 2.811000000000001
+    },
+    {
+     "Ano": 2000,
+     "Mês": 4,
+     "Periodo": "20004",
+     "SELIC": 0.013,
+     "selic_acumulada": 2.798000000000001
+    },
+    {
+     "Ano": 2000,
+     "Mês": 5,
+     "Periodo": "20005",
+     "SELIC": 0.0149,
+     "selic_acumulada": 2.783100000000001
+    },
+    {
+     "Ano": 2000,
+     "Mês": 6,
+     "Periodo": "20006",
+     "SELIC": 0.0139,
+     "selic_acumulada": 2.769200000000001
+    },
+    {
+     "Ano": 2000,
+     "Mês": 7,
+     "Periodo": "20007",
+     "SELIC": 0.0131,
+     "selic_acumulada": 2.756100000000001
+    },
+    {
+     "Ano": 2000,
+     "Mês": 8,
+     "Periodo": "20008",
+     "SELIC": 0.0141,
+     "selic_acumulada": 2.742000000000001
+    },
+    {
+     "Ano": 2000,
+     "Mês": 9,
+     "Periodo": "20009",
+     "SELIC": 0.0122,
+     "selic_acumulada": 2.729800000000001
+    },
+    {
+     "Ano": 2000,
+     "Mês": 10,
+     "Periodo": "200010",
+     "SELIC": 0.0129,
+     "selic_acumulada": 2.7169000000000008
+    },
+    {
+     "Ano": 2000,
+     "Mês": 11,
+     "Periodo": "200011",
+     "SELIC": 0.0122,
+     "selic_acumulada": 2.7047000000000008
+    },
+    {
+     "Ano": 2000,
+     "Mês": 12,
+     "Periodo": "200012",
+     "SELIC": 0.012,
+     "selic_acumulada": 2.6927000000000008
+    },
+    {
+     "Ano": 2001,
+     "Mês": 1,
+     "Periodo": "20011",
+     "SELIC": 0.0127,
+     "selic_acumulada": 2.6800000000000006
+    },
+    {
+     "Ano": 2001,
+     "Mês": 2,
+     "Periodo": "20012",
+     "SELIC": 0.0102,
+     "selic_acumulada": 2.6698000000000004
+    },
+    {
+     "Ano": 2001,
+     "Mês": 3,
+     "Periodo": "20013",
+     "SELIC": 0.0126,
+     "selic_acumulada": 2.6572000000000005
+    },
+    {
+     "Ano": 2001,
+     "Mês": 4,
+     "Periodo": "20014",
+     "SELIC": 0.0119,
+     "selic_acumulada": 2.6453000000000007
+    },
+    {
+     "Ano": 2001,
+     "Mês": 5,
+     "Periodo": "20015",
+     "SELIC": 0.0134,
+     "selic_acumulada": 2.631900000000001
+    },
+    {
+     "Ano": 2001,
+     "Mês": 6,
+     "Periodo": "20016",
+     "SELIC": 0.0127,
+     "selic_acumulada": 2.6192000000000006
+    },
+    {
+     "Ano": 2001,
+     "Mês": 7,
+     "Periodo": "20017",
+     "SELIC": 0.015,
+     "selic_acumulada": 2.6042000000000005
+    },
+    {
+     "Ano": 2001,
+     "Mês": 8,
+     "Periodo": "20018",
+     "SELIC": 0.016,
+     "selic_acumulada": 2.5882000000000005
+    },
+    {
+     "Ano": 2001,
+     "Mês": 9,
+     "Periodo": "20019",
+     "SELIC": 0.0132,
+     "selic_acumulada": 2.5750000000000006
+    },
+    {
+     "Ano": 2001,
+     "Mês": 10,
+     "Periodo": "200110",
+     "SELIC": 0.0153,
+     "selic_acumulada": 2.5597000000000008
+    },
+    {
+     "Ano": 2001,
+     "Mês": 11,
+     "Periodo": "200111",
+     "SELIC": 0.0139,
+     "selic_acumulada": 2.5458000000000007
+    },
+    {
+     "Ano": 2001,
+     "Mês": 12,
+     "Periodo": "200112",
+     "SELIC": 0.0139,
+     "selic_acumulada": 2.5319000000000007
+    },
+    {
+     "Ano": 2002,
+     "Mês": 1,
+     "Periodo": "20021",
+     "SELIC": 0.0153,
+     "selic_acumulada": 2.516600000000001
+    },
+    {
+     "Ano": 2002,
+     "Mês": 2,
+     "Periodo": "20022",
+     "SELIC": 0.0125,
+     "selic_acumulada": 2.5041000000000007
+    },
+    {
+     "Ano": 2002,
+     "Mês": 3,
+     "Periodo": "20023",
+     "SELIC": 0.0137,
+     "selic_acumulada": 2.4904000000000006
+    },
+    {
+     "Ano": 2002,
+     "Mês": 4,
+     "Periodo": "20024",
+     "SELIC": 0.0148,
+     "selic_acumulada": 2.4756000000000005
+    },
+    {
+     "Ano": 2002,
+     "Mês": 5,
+     "Periodo": "20025",
+     "SELIC": 0.0141,
+     "selic_acumulada": 2.4615000000000005
+    },
+    {
+     "Ano": 2002,
+     "Mês": 6,
+     "Periodo": "20026",
+     "SELIC": 0.0133,
+     "selic_acumulada": 2.4482000000000004
+    },
+    {
+     "Ano": 2002,
+     "Mês": 7,
+     "Periodo": "20027",
+     "SELIC": 0.0154,
+     "selic_acumulada": 2.4328000000000003
+    },
+    {
+     "Ano": 2002,
+     "Mês": 8,
+     "Periodo": "20028",
+     "SELIC": 0.0144,
+     "selic_acumulada": 2.4184
+    },
+    {
+     "Ano": 2002,
+     "Mês": 9,
+     "Periodo": "20029",
+     "SELIC": 0.0138,
+     "selic_acumulada": 2.4046000000000003
+    },
+    {
+     "Ano": 2002,
+     "Mês": 10,
+     "Periodo": "200210",
+     "SELIC": 0.0165,
+     "selic_acumulada": 2.3881
+    },
+    {
+     "Ano": 2002,
+     "Mês": 11,
+     "Periodo": "200211",
+     "SELIC": 0.0154,
+     "selic_acumulada": 2.3727
+    },
+    {
+     "Ano": 2002,
+     "Mês": 12,
+     "Periodo": "200212",
+     "SELIC": 0.0174,
+     "selic_acumulada": 2.3553
+    },
+    {
+     "Ano": 2003,
+     "Mês": 1,
+     "Periodo": "20031",
+     "SELIC": 0.0197,
+     "selic_acumulada": 2.3356000000000003
+    },
+    {
+     "Ano": 2003,
+     "Mês": 2,
+     "Periodo": "20032",
+     "SELIC": 0.0183,
+     "selic_acumulada": 2.3173000000000004
+    },
+    {
+     "Ano": 2003,
+     "Mês": 3,
+     "Periodo": "20033",
+     "SELIC": 0.0178,
+     "selic_acumulada": 2.2995000000000005
+    },
+    {
+     "Ano": 2003,
+     "Mês": 4,
+     "Periodo": "20034",
+     "SELIC": 0.0187,
+     "selic_acumulada": 2.2808000000000006
+    },
+    {
+     "Ano": 2003,
+     "Mês": 5,
+     "Periodo": "20035",
+     "SELIC": 0.0197,
+     "selic_acumulada": 2.2611000000000008
+    },
+    {
+     "Ano": 2003,
+     "Mês": 6,
+     "Periodo": "20036",
+     "SELIC": 0.0186,
+     "selic_acumulada": 2.2425000000000006
+    },
+    {
+     "Ano": 2003,
+     "Mês": 7,
+     "Periodo": "20037",
+     "SELIC": 0.0208,
+     "selic_acumulada": 2.2217000000000007
+    },
+    {
+     "Ano": 2003,
+     "Mês": 8,
+     "Periodo": "20038",
+     "SELIC": 0.0177,
+     "selic_acumulada": 2.2040000000000006
+    },
+    {
+     "Ano": 2003,
+     "Mês": 9,
+     "Periodo": "20039",
+     "SELIC": 0.0168,
+     "selic_acumulada": 2.1872000000000007
+    },
+    {
+     "Ano": 2003,
+     "Mês": 10,
+     "Periodo": "200310",
+     "SELIC": 0.0164,
+     "selic_acumulada": 2.1708000000000007
+    },
+    {
+     "Ano": 2003,
+     "Mês": 11,
+     "Periodo": "200311",
+     "SELIC": 0.0134,
+     "selic_acumulada": 2.157400000000001
+    },
+    {
+     "Ano": 2003,
+     "Mês": 12,
+     "Periodo": "200312",
+     "SELIC": 0.0137,
+     "selic_acumulada": 2.143700000000001
+    },
+    {
+     "Ano": 2004,
+     "Mês": 1,
+     "Periodo": "20041",
+     "SELIC": 0.0127,
+     "selic_acumulada": 2.1310000000000007
+    },
+    {
+     "Ano": 2004,
+     "Mês": 2,
+     "Periodo": "20042",
+     "SELIC": 0.0108,
+     "selic_acumulada": 2.1202000000000005
+    },
+    {
+     "Ano": 2004,
+     "Mês": 3,
+     "Periodo": "20043",
+     "SELIC": 0.0138,
+     "selic_acumulada": 2.1064000000000007
+    },
+    {
+     "Ano": 2004,
+     "Mês": 4,
+     "Periodo": "20044",
+     "SELIC": 0.0118,
+     "selic_acumulada": 2.0946000000000007
+    },
+    {
+     "Ano": 2004,
+     "Mês": 5,
+     "Periodo": "20045",
+     "SELIC": 0.0123,
+     "selic_acumulada": 2.0823000000000005
+    },
+    {
+     "Ano": 2004,
+     "Mês": 6,
+     "Periodo": "20046",
+     "SELIC": 0.0123,
+     "selic_acumulada": 2.0700000000000003
+    },
+    {
+     "Ano": 2004,
+     "Mês": 7,
+     "Periodo": "20047",
+     "SELIC": 0.0129,
+     "selic_acumulada": 2.0571
+    },
+    {
+     "Ano": 2004,
+     "Mês": 8,
+     "Periodo": "20048",
+     "SELIC": 0.0129,
+     "selic_acumulada": 2.0442
+    },
+    {
+     "Ano": 2004,
+     "Mês": 9,
+     "Periodo": "20049",
+     "SELIC": 0.0125,
+     "selic_acumulada": 2.0317
+    },
+    {
+     "Ano": 2004,
+     "Mês": 10,
+     "Periodo": "200410",
+     "SELIC": 0.0121,
+     "selic_acumulada": 2.0195999999999996
+    },
+    {
+     "Ano": 2004,
+     "Mês": 11,
+     "Periodo": "200411",
+     "SELIC": 0.0125,
+     "selic_acumulada": 2.0070999999999994
+    },
+    {
+     "Ano": 2004,
+     "Mês": 12,
+     "Periodo": "200412",
+     "SELIC": 0.0148,
+     "selic_acumulada": 1.9922999999999995
+    },
+    {
+     "Ano": 2005,
+     "Mês": 1,
+     "Periodo": "20051",
+     "SELIC": 0.0138,
+     "selic_acumulada": 1.9784999999999995
+    },
+    {
+     "Ano": 2005,
+     "Mês": 2,
+     "Periodo": "20052",
+     "SELIC": 0.0122,
+     "selic_acumulada": 1.9662999999999995
+    },
+    {
+     "Ano": 2005,
+     "Mês": 3,
+     "Periodo": "20053",
+     "SELIC": 0.0153,
+     "selic_acumulada": 1.9509999999999994
+    },
+    {
+     "Ano": 2005,
+     "Mês": 4,
+     "Periodo": "20054",
+     "SELIC": 0.0141,
+     "selic_acumulada": 1.9368999999999994
+    },
+    {
+     "Ano": 2005,
+     "Mês": 5,
+     "Periodo": "20055",
+     "SELIC": 0.015,
+     "selic_acumulada": 1.9218999999999995
+    },
+    {
+     "Ano": 2005,
+     "Mês": 6,
+     "Periodo": "20056",
+     "SELIC": 0.0159,
+     "selic_acumulada": 1.9059999999999995
+    },
+    {
+     "Ano": 2005,
+     "Mês": 7,
+     "Periodo": "20057",
+     "SELIC": 0.0151,
+     "selic_acumulada": 1.8908999999999996
+    },
+    {
+     "Ano": 2005,
+     "Mês": 8,
+     "Periodo": "20058",
+     "SELIC": 0.0166,
+     "selic_acumulada": 1.8742999999999996
+    },
+    {
+     "Ano": 2005,
+     "Mês": 9,
+     "Periodo": "20059",
+     "SELIC": 0.015,
+     "selic_acumulada": 1.8592999999999997
+    },
+    {
+     "Ano": 2005,
+     "Mês": 10,
+     "Periodo": "200510",
+     "SELIC": 0.0141,
+     "selic_acumulada": 1.8451999999999997
+    },
+    {
+     "Ano": 2005,
+     "Mês": 11,
+     "Periodo": "200511",
+     "SELIC": 0.0138,
+     "selic_acumulada": 1.8313999999999997
+    },
+    {
+     "Ano": 2005,
+     "Mês": 12,
+     "Periodo": "200512",
+     "SELIC": 0.0147,
+     "selic_acumulada": 1.8166999999999998
+    },
+    {
+     "Ano": 2006,
+     "Mês": 1,
+     "Periodo": "20061",
+     "SELIC": 0.0143,
+     "selic_acumulada": 1.8023999999999998
+    },
+    {
+     "Ano": 2006,
+     "Mês": 2,
+     "Periodo": "20062",
+     "SELIC": 0.0115,
+     "selic_acumulada": 1.7908999999999997
+    },
+    {
+     "Ano": 2006,
+     "Mês": 3,
+     "Periodo": "20063",
+     "SELIC": 0.0142,
+     "selic_acumulada": 1.7766999999999997
+    },
+    {
+     "Ano": 2006,
+     "Mês": 4,
+     "Periodo": "20064",
+     "SELIC": 0.0108,
+     "selic_acumulada": 1.7658999999999998
+    },
+    {
+     "Ano": 2006,
+     "Mês": 5,
+     "Periodo": "20065",
+     "SELIC": 0.0128,
+     "selic_acumulada": 1.7530999999999999
+    },
+    {
+     "Ano": 2006,
+     "Mês": 6,
+     "Periodo": "20066",
+     "SELIC": 0.0118,
+     "selic_acumulada": 1.7412999999999998
+    },
+    {
+     "Ano": 2006,
+     "Mês": 7,
+     "Periodo": "20067",
+     "SELIC": 0.0117,
+     "selic_acumulada": 1.7295999999999998
+    },
+    {
+     "Ano": 2006,
+     "Mês": 8,
+     "Periodo": "20068",
+     "SELIC": 0.0126,
+     "selic_acumulada": 1.7169999999999999
+    },
+    {
+     "Ano": 2006,
+     "Mês": 9,
+     "Periodo": "20069",
+     "SELIC": 0.0106,
+     "selic_acumulada": 1.7064
+    },
+    {
+     "Ano": 2006,
+     "Mês": 10,
+     "Periodo": "200610",
+     "SELIC": 0.0109,
+     "selic_acumulada": 1.6955
+    },
+    {
+     "Ano": 2006,
+     "Mês": 11,
+     "Periodo": "200611",
+     "SELIC": 0.0102,
+     "selic_acumulada": 1.6853
+    },
+    {
+     "Ano": 2006,
+     "Mês": 12,
+     "Periodo": "200612",
+     "SELIC": 0.0099,
+     "selic_acumulada": 1.6754
+    },
+    {
+     "Ano": 2007,
+     "Mês": 1,
+     "Periodo": "20071",
+     "SELIC": 0.0108,
+     "selic_acumulada": 1.6646
+    },
+    {
+     "Ano": 2007,
+     "Mês": 2,
+     "Periodo": "20072",
+     "SELIC": 0.0087,
+     "selic_acumulada": 1.6559000000000001
+    },
+    {
+     "Ano": 2007,
+     "Mês": 3,
+     "Periodo": "20073",
+     "SELIC": 0.0105,
+     "selic_acumulada": 1.6454000000000002
+    },
+    {
+     "Ano": 2007,
+     "Mês": 4,
+     "Periodo": "20074",
+     "SELIC": 0.0094,
+     "selic_acumulada": 1.6360000000000001
+    },
+    {
+     "Ano": 2007,
+     "Mês": 5,
+     "Periodo": "20075",
+     "SELIC": 0.0103,
+     "selic_acumulada": 1.6257000000000001
+    },
+    {
+     "Ano": 2007,
+     "Mês": 6,
+     "Periodo": "20076",
+     "SELIC": 0.0091,
+     "selic_acumulada": 1.6166
+    },
+    {
+     "Ano": 2007,
+     "Mês": 7,
+     "Periodo": "20077",
+     "SELIC": 0.0097,
+     "selic_acumulada": 1.6069
+    },
+    {
+     "Ano": 2007,
+     "Mês": 8,
+     "Periodo": "20078",
+     "SELIC": 0.0099,
+     "selic_acumulada": 1.597
+    },
+    {
+     "Ano": 2007,
+     "Mês": 9,
+     "Periodo": "20079",
+     "SELIC": 0.008,
+     "selic_acumulada": 1.589
+    },
+    {
+     "Ano": 2007,
+     "Mês": 10,
+     "Periodo": "200710",
+     "SELIC": 0.0093,
+     "selic_acumulada": 1.5796999999999999
+    },
+    {
+     "Ano": 2007,
+     "Mês": 11,
+     "Periodo": "200711",
+     "SELIC": 0.0084,
+     "selic_acumulada": 1.5713
+    },
+    {
+     "Ano": 2007,
+     "Mês": 12,
+     "Periodo": "200712",
+     "SELIC": 0.0084,
+     "selic_acumulada": 1.5629
+    },
+    {
+     "Ano": 2008,
+     "Mês": 1,
+     "Periodo": "20081",
+     "SELIC": 0.0093,
+     "selic_acumulada": 1.5535999999999999
+    },
+    {
+     "Ano": 2008,
+     "Mês": 2,
+     "Periodo": "20082",
+     "SELIC": 0.008,
+     "selic_acumulada": 1.5455999999999999
+    },
+    {
+     "Ano": 2008,
+     "Mês": 3,
+     "Periodo": "20083",
+     "SELIC": 0.0084,
+     "selic_acumulada": 1.5372
+    },
+    {
+     "Ano": 2008,
+     "Mês": 4,
+     "Periodo": "20084",
+     "SELIC": 0.009,
+     "selic_acumulada": 1.5282
+    },
+    {
+     "Ano": 2008,
+     "Mês": 5,
+     "Periodo": "20085",
+     "SELIC": 0.0088,
+     "selic_acumulada": 1.5194
+    },
+    {
+     "Ano": 2008,
+     "Mês": 6,
+     "Periodo": "20086",
+     "SELIC": 0.0096,
+     "selic_acumulada": 1.5098
+    },
+    {
+     "Ano": 2008,
+     "Mês": 7,
+     "Periodo": "20087",
+     "SELIC": 0.0107,
+     "selic_acumulada": 1.4991
+    },
+    {
+     "Ano": 2008,
+     "Mês": 8,
+     "Periodo": "20088",
+     "SELIC": 0.0102,
+     "selic_acumulada": 1.4889000000000001
+    },
+    {
+     "Ano": 2008,
+     "Mês": 9,
+     "Periodo": "20089",
+     "SELIC": 0.011,
+     "selic_acumulada": 1.4779000000000002
+    },
+    {
+     "Ano": 2008,
+     "Mês": 10,
+     "Periodo": "200810",
+     "SELIC": 0.0118,
+     "selic_acumulada": 1.4661000000000002
+    },
+    {
+     "Ano": 2008,
+     "Mês": 11,
+     "Periodo": "200811",
+     "SELIC": 0.0102,
+     "selic_acumulada": 1.4559000000000002
+    },
+    {
+     "Ano": 2008,
+     "Mês": 12,
+     "Periodo": "200812",
+     "SELIC": 0.0112,
+     "selic_acumulada": 1.4447
+    },
+    {
+     "Ano": 2009,
+     "Mês": 1,
+     "Periodo": "20091",
+     "SELIC": 0.0105,
+     "selic_acumulada": 1.4342000000000001
+    },
+    {
+     "Ano": 2009,
+     "Mês": 2,
+     "Periodo": "20092",
+     "SELIC": 0.0086,
+     "selic_acumulada": 1.4256000000000002
+    },
+    {
+     "Ano": 2009,
+     "Mês": 3,
+     "Periodo": "20093",
+     "SELIC": 0.0097,
+     "selic_acumulada": 1.4159000000000002
+    },
+    {
+     "Ano": 2009,
+     "Mês": 4,
+     "Periodo": "20094",
+     "SELIC": 0.0084,
+     "selic_acumulada": 1.4075000000000002
+    },
+    {
+     "Ano": 2009,
+     "Mês": 5,
+     "Periodo": "20095",
+     "SELIC": 0.0077,
+     "selic_acumulada": 1.3998000000000002
+    },
+    {
+     "Ano": 2009,
+     "Mês": 6,
+     "Periodo": "20096",
+     "SELIC": 0.0076,
+     "selic_acumulada": 1.3922
+    },
+    {
+     "Ano": 2009,
+     "Mês": 7,
+     "Periodo": "20097",
+     "SELIC": 0.0079,
+     "selic_acumulada": 1.3843
+    },
+    {
+     "Ano": 2009,
+     "Mês": 8,
+     "Periodo": "20098",
+     "SELIC": 0.0069,
+     "selic_acumulada": 1.3774000000000002
+    },
+    {
+     "Ano": 2009,
+     "Mês": 9,
+     "Periodo": "20099",
+     "SELIC": 0.0069,
+     "selic_acumulada": 1.3705000000000003
+    },
+    {
+     "Ano": 2009,
+     "Mês": 10,
+     "Periodo": "200910",
+     "SELIC": 0.0069,
+     "selic_acumulada": 1.3636000000000004
+    },
+    {
+     "Ano": 2009,
+     "Mês": 11,
+     "Periodo": "200911",
+     "SELIC": 0.0066,
+     "selic_acumulada": 1.3570000000000004
+    },
+    {
+     "Ano": 2009,
+     "Mês": 12,
+     "Periodo": "200912",
+     "SELIC": 0.0073,
+     "selic_acumulada": 1.3497000000000003
+    },
+    {
+     "Ano": 2010,
+     "Mês": 1,
+     "Periodo": "20101",
+     "SELIC": 0.0066,
+     "selic_acumulada": 1.3431000000000004
+    },
+    {
+     "Ano": 2010,
+     "Mês": 2,
+     "Periodo": "20102",
+     "SELIC": 0.0059,
+     "selic_acumulada": 1.3372000000000004
+    },
+    {
+     "Ano": 2010,
+     "Mês": 3,
+     "Periodo": "20103",
+     "SELIC": 0.0076,
+     "selic_acumulada": 1.3296000000000003
+    },
+    {
+     "Ano": 2010,
+     "Mês": 4,
+     "Periodo": "20104",
+     "SELIC": 0.0067,
+     "selic_acumulada": 1.3229000000000004
+    },
+    {
+     "Ano": 2010,
+     "Mês": 5,
+     "Periodo": "20105",
+     "SELIC": 0.0075,
+     "selic_acumulada": 1.3154000000000003
+    },
+    {
+     "Ano": 2010,
+     "Mês": 6,
+     "Periodo": "20106",
+     "SELIC": 0.0079,
+     "selic_acumulada": 1.3075000000000003
+    },
+    {
+     "Ano": 2010,
+     "Mês": 7,
+     "Periodo": "20107",
+     "SELIC": 0.0086,
+     "selic_acumulada": 1.2989000000000004
+    },
+    {
+     "Ano": 2010,
+     "Mês": 8,
+     "Periodo": "20108",
+     "SELIC": 0.0089,
+     "selic_acumulada": 1.2900000000000005
+    },
+    {
+     "Ano": 2010,
+     "Mês": 9,
+     "Periodo": "20109",
+     "SELIC": 0.0085,
+     "selic_acumulada": 1.2815000000000005
+    },
+    {
+     "Ano": 2010,
+     "Mês": 10,
+     "Periodo": "201010",
+     "SELIC": 0.0081,
+     "selic_acumulada": 1.2734000000000005
+    },
+    {
+     "Ano": 2010,
+     "Mês": 11,
+     "Periodo": "201011",
+     "SELIC": 0.0081,
+     "selic_acumulada": 1.2653000000000005
+    },
+    {
+     "Ano": 2010,
+     "Mês": 12,
+     "Periodo": "201012",
+     "SELIC": 0.0093,
+     "selic_acumulada": 1.2560000000000004
+    },
+    {
+     "Ano": 2011,
+     "Mês": 1,
+     "Periodo": "20111",
+     "SELIC": 0.0086,
+     "selic_acumulada": 1.2474000000000005
+    },
+    {
+     "Ano": 2011,
+     "Mês": 2,
+     "Periodo": "20112",
+     "SELIC": 0.0084,
+     "selic_acumulada": 1.2390000000000005
+    },
+    {
+     "Ano": 2011,
+     "Mês": 3,
+     "Periodo": "20113",
+     "SELIC": 0.0092,
+     "selic_acumulada": 1.2298000000000004
+    },
+    {
+     "Ano": 2011,
+     "Mês": 4,
+     "Periodo": "20114",
+     "SELIC": 0.0084,
+     "selic_acumulada": 1.2214000000000005
+    },
+    {
+     "Ano": 2011,
+     "Mês": 5,
+     "Periodo": "20115",
+     "SELIC": 0.0099,
+     "selic_acumulada": 1.2115000000000005
+    },
+    {
+     "Ano": 2011,
+     "Mês": 6,
+     "Periodo": "20116",
+     "SELIC": 0.0096,
+     "selic_acumulada": 1.2019000000000004
+    },
+    {
+     "Ano": 2011,
+     "Mês": 7,
+     "Periodo": "20117",
+     "SELIC": 0.0097,
+     "selic_acumulada": 1.1922000000000004
+    },
+    {
+     "Ano": 2011,
+     "Mês": 8,
+     "Periodo": "20118",
+     "SELIC": 0.0107,
+     "selic_acumulada": 1.1815000000000004
+    },
+    {
+     "Ano": 2011,
+     "Mês": 9,
+     "Periodo": "20119",
+     "SELIC": 0.0094,
+     "selic_acumulada": 1.1721000000000004
+    },
+    {
+     "Ano": 2011,
+     "Mês": 10,
+     "Periodo": "201110",
+     "SELIC": 0.0088,
+     "selic_acumulada": 1.1633000000000004
+    },
+    {
+     "Ano": 2011,
+     "Mês": 11,
+     "Periodo": "201111",
+     "SELIC": 0.0086,
+     "selic_acumulada": 1.1547000000000005
+    },
+    {
+     "Ano": 2011,
+     "Mês": 12,
+     "Periodo": "201112",
+     "SELIC": 0.0091,
+     "selic_acumulada": 1.1456000000000004
+    },
+    {
+     "Ano": 2012,
+     "Mês": 1,
+     "Periodo": "20121",
+     "SELIC": 0.0089,
+     "selic_acumulada": 1.1367000000000005
+    },
+    {
+     "Ano": 2012,
+     "Mês": 2,
+     "Periodo": "20122",
+     "SELIC": 0.0075,
+     "selic_acumulada": 1.1292000000000004
+    },
+    {
+     "Ano": 2012,
+     "Mês": 3,
+     "Periodo": "20123",
+     "SELIC": 0.0082,
+     "selic_acumulada": 1.1210000000000004
+    },
+    {
+     "Ano": 2012,
+     "Mês": 4,
+     "Periodo": "20124",
+     "SELIC": 0.0071,
+     "selic_acumulada": 1.1139000000000003
+    },
+    {
+     "Ano": 2012,
+     "Mês": 5,
+     "Periodo": "20125",
+     "SELIC": 0.0074,
+     "selic_acumulada": 1.1065000000000003
+    },
+    {
+     "Ano": 2012,
+     "Mês": 6,
+     "Periodo": "20126",
+     "SELIC": 0.0064,
+     "selic_acumulada": 1.1001000000000003
+    },
+    {
+     "Ano": 2012,
+     "Mês": 7,
+     "Periodo": "20127",
+     "SELIC": 0.0068,
+     "selic_acumulada": 1.0933000000000004
+    },
+    {
+     "Ano": 2012,
+     "Mês": 8,
+     "Periodo": "20128",
+     "SELIC": 0.0069,
+     "selic_acumulada": 1.0864000000000005
+    },
+    {
+     "Ano": 2012,
+     "Mês": 9,
+     "Periodo": "20129",
+     "SELIC": 0.0054,
+     "selic_acumulada": 1.0810000000000004
+    },
+    {
+     "Ano": 2012,
+     "Mês": 10,
+     "Periodo": "201210",
+     "SELIC": 0.0061,
+     "selic_acumulada": 1.0749000000000004
+    },
+    {
+     "Ano": 2012,
+     "Mês": 11,
+     "Periodo": "201211",
+     "SELIC": 0.0055,
+     "selic_acumulada": 1.0694000000000004
+    },
+    {
+     "Ano": 2012,
+     "Mês": 12,
+     "Periodo": "201212",
+     "SELIC": 0.0055,
+     "selic_acumulada": 1.0639000000000003
+    },
+    {
+     "Ano": 2013,
+     "Mês": 1,
+     "Periodo": "20131",
+     "SELIC": 0.006,
+     "selic_acumulada": 1.0579000000000003
+    },
+    {
+     "Ano": 2013,
+     "Mês": 2,
+     "Periodo": "20132",
+     "SELIC": 0.0049,
+     "selic_acumulada": 1.0530000000000004
+    },
+    {
+     "Ano": 2013,
+     "Mês": 3,
+     "Periodo": "20133",
+     "SELIC": 0.0055,
+     "selic_acumulada": 1.0475000000000003
+    },
+    {
+     "Ano": 2013,
+     "Mês": 4,
+     "Periodo": "20134",
+     "SELIC": 0.0061,
+     "selic_acumulada": 1.0414000000000003
+    },
+    {
+     "Ano": 2013,
+     "Mês": 5,
+     "Periodo": "20135",
+     "SELIC": 0.006,
+     "selic_acumulada": 1.0354000000000003
+    },
+    {
+     "Ano": 2013,
+     "Mês": 6,
+     "Periodo": "20136",
+     "SELIC": 0.0061,
+     "selic_acumulada": 1.0293000000000003
+    },
+    {
+     "Ano": 2013,
+     "Mês": 7,
+     "Periodo": "20137",
+     "SELIC": 0.0072,
+     "selic_acumulada": 1.0221000000000002
+    },
+    {
+     "Ano": 2013,
+     "Mês": 8,
+     "Periodo": "20138",
+     "SELIC": 0.0071,
+     "selic_acumulada": 1.0150000000000001
+    },
+    {
+     "Ano": 2013,
+     "Mês": 9,
+     "Periodo": "20139",
+     "SELIC": 0.0071,
+     "selic_acumulada": 1.0079
+    },
+    {
+     "Ano": 2013,
+     "Mês": 10,
+     "Periodo": "201310",
+     "SELIC": 0.0081,
+     "selic_acumulada": 0.9997999999999999
+    },
+    {
+     "Ano": 2013,
+     "Mês": 11,
+     "Periodo": "201311",
+     "SELIC": 0.0072,
+     "selic_acumulada": 0.9925999999999999
+    },
+    {
+     "Ano": 2013,
+     "Mês": 12,
+     "Periodo": "201312",
+     "SELIC": 0.0079,
+     "selic_acumulada": 0.9846999999999999
+    },
+    {
+     "Ano": 2014,
+     "Mês": 1,
+     "Periodo": "20141",
+     "SELIC": 0.0085,
+     "selic_acumulada": 0.9762
+    },
+    {
+     "Ano": 2014,
+     "Mês": 2,
+     "Periodo": "20142",
+     "SELIC": 0.0079,
+     "selic_acumulada": 0.9682999999999999
+    },
+    {
+     "Ano": 2014,
+     "Mês": 3,
+     "Periodo": "20143",
+     "SELIC": 0.0077,
+     "selic_acumulada": 0.9605999999999999
+    },
+    {
+     "Ano": 2014,
+     "Mês": 4,
+     "Periodo": "20144",
+     "SELIC": 0.0082,
+     "selic_acumulada": 0.9523999999999999
+    },
+    {
+     "Ano": 2014,
+     "Mês": 5,
+     "Periodo": "20145",
+     "SELIC": 0.0087,
+     "selic_acumulada": 0.9436999999999999
+    },
+    {
+     "Ano": 2014,
+     "Mês": 6,
+     "Periodo": "20146",
+     "SELIC": 0.0082,
+     "selic_acumulada": 0.9354999999999999
+    },
+    {
+     "Ano": 2014,
+     "Mês": 7,
+     "Periodo": "20147",
+     "SELIC": 0.0095,
+     "selic_acumulada": 0.9259999999999999
+    },
+    {
+     "Ano": 2014,
+     "Mês": 8,
+     "Periodo": "20148",
+     "SELIC": 0.0087,
+     "selic_acumulada": 0.9172999999999999
+    },
+    {
+     "Ano": 2014,
+     "Mês": 9,
+     "Periodo": "20149",
+     "SELIC": 0.0091,
+     "selic_acumulada": 0.9081999999999999
+    },
+    {
+     "Ano": 2014,
+     "Mês": 10,
+     "Periodo": "201410",
+     "SELIC": 0.0095,
+     "selic_acumulada": 0.8986999999999999
+    },
+    {
+     "Ano": 2014,
+     "Mês": 11,
+     "Periodo": "201411",
+     "SELIC": 0.0084,
+     "selic_acumulada": 0.8903
+    },
+    {
+     "Ano": 2014,
+     "Mês": 12,
+     "Periodo": "201412",
+     "SELIC": 0.0096,
+     "selic_acumulada": 0.8806999999999999
+    },
+    {
+     "Ano": 2015,
+     "Mês": 1,
+     "Periodo": "20151",
+     "SELIC": 0.0094,
+     "selic_acumulada": 0.8713
+    },
+    {
+     "Ano": 2015,
+     "Mês": 2,
+     "Periodo": "20152",
+     "SELIC": 0.0082,
+     "selic_acumulada": 0.8631
+    },
+    {
+     "Ano": 2015,
+     "Mês": 3,
+     "Periodo": "20153",
+     "SELIC": 0.0104,
+     "selic_acumulada": 0.8527
+    },
+    {
+     "Ano": 2015,
+     "Mês": 4,
+     "Periodo": "20154",
+     "SELIC": 0.0095,
+     "selic_acumulada": 0.8432000000000001
+    },
+    {
+     "Ano": 2015,
+     "Mês": 5,
+     "Periodo": "20155",
+     "SELIC": 0.0099,
+     "selic_acumulada": 0.8333
+    },
+    {
+     "Ano": 2015,
+     "Mês": 6,
+     "Periodo": "20156",
+     "SELIC": 0.0107,
+     "selic_acumulada": 0.8226
+    },
+    {
+     "Ano": 2015,
+     "Mês": 7,
+     "Periodo": "20157",
+     "SELIC": 0.0118,
+     "selic_acumulada": 0.8108
+    },
+    {
+     "Ano": 2015,
+     "Mês": 8,
+     "Periodo": "20158",
+     "SELIC": 0.0111,
+     "selic_acumulada": 0.7997
+    },
+    {
+     "Ano": 2015,
+     "Mês": 9,
+     "Periodo": "20159",
+     "SELIC": 0.0111,
+     "selic_acumulada": 0.7886
+    },
+    {
+     "Ano": 2015,
+     "Mês": 10,
+     "Periodo": "201510",
+     "SELIC": 0.0111,
+     "selic_acumulada": 0.7775
+    },
+    {
+     "Ano": 2015,
+     "Mês": 11,
+     "Periodo": "201511",
+     "SELIC": 0.0106,
+     "selic_acumulada": 0.7668999999999999
+    },
+    {
+     "Ano": 2015,
+     "Mês": 12,
+     "Periodo": "201512",
+     "SELIC": 0.0116,
+     "selic_acumulada": 0.7553
+    },
+    {
+     "Ano": 2016,
+     "Mês": 1,
+     "Periodo": "20161",
+     "SELIC": 0.0106,
+     "selic_acumulada": 0.7446999999999999
+    },
+    {
+     "Ano": 2016,
+     "Mês": 2,
+     "Periodo": "20162",
+     "SELIC": 0.01,
+     "selic_acumulada": 0.7346999999999999
+    },
+    {
+     "Ano": 2016,
+     "Mês": 3,
+     "Periodo": "20163",
+     "SELIC": 0.0116,
+     "selic_acumulada": 0.7230999999999999
+    },
+    {
+     "Ano": 2016,
+     "Mês": 4,
+     "Periodo": "20164",
+     "SELIC": 0.0106,
+     "selic_acumulada": 0.7124999999999998
+    },
+    {
+     "Ano": 2016,
+     "Mês": 5,
+     "Periodo": "20165",
+     "SELIC": 0.0111,
+     "selic_acumulada": 0.7013999999999998
+    },
+    {
+     "Ano": 2016,
+     "Mês": 6,
+     "Periodo": "20166",
+     "SELIC": 0.0116,
+     "selic_acumulada": 0.6897999999999997
+    },
+    {
+     "Ano": 2016,
+     "Mês": 7,
+     "Periodo": "20167",
+     "SELIC": 0.0111,
+     "selic_acumulada": 0.6786999999999997
+    },
+    {
+     "Ano": 2016,
+     "Mês": 8,
+     "Periodo": "20168",
+     "SELIC": 0.0122,
+     "selic_acumulada": 0.6664999999999998
+    },
+    {
+     "Ano": 2016,
+     "Mês": 9,
+     "Periodo": "20169",
+     "SELIC": 0.0111,
+     "selic_acumulada": 0.6553999999999998
+    },
+    {
+     "Ano": 2016,
+     "Mês": 10,
+     "Periodo": "201610",
+     "SELIC": 0.0105,
+     "selic_acumulada": 0.6448999999999998
+    },
+    {
+     "Ano": 2016,
+     "Mês": 11,
+     "Periodo": "201611",
+     "SELIC": 0.0104,
+     "selic_acumulada": 0.6344999999999998
+    },
+    {
+     "Ano": 2016,
+     "Mês": 12,
+     "Periodo": "201612",
+     "SELIC": 0.0112,
+     "selic_acumulada": 0.6232999999999999
+    },
+    {
+     "Ano": 2017,
+     "Mês": 1,
+     "Periodo": "20171",
+     "SELIC": 0.0109,
+     "selic_acumulada": 0.6123999999999998
+    },
+    {
+     "Ano": 2017,
+     "Mês": 2,
+     "Periodo": "20172",
+     "SELIC": 0.0087,
+     "selic_acumulada": 0.6036999999999998
+    },
+    {
+     "Ano": 2017,
+     "Mês": 3,
+     "Periodo": "20173",
+     "SELIC": 0.0105,
+     "selic_acumulada": 0.5931999999999998
+    },
+    {
+     "Ano": 2017,
+     "Mês": 4,
+     "Periodo": "20174",
+     "SELIC": 0.0079,
+     "selic_acumulada": 0.5852999999999998
+    },
+    {
+     "Ano": 2017,
+     "Mês": 5,
+     "Periodo": "20175",
+     "SELIC": 0.0093,
+     "selic_acumulada": 0.5759999999999998
+    },
+    {
+     "Ano": 2017,
+     "Mês": 6,
+     "Periodo": "20176",
+     "SELIC": 0.0081,
+     "selic_acumulada": 0.5678999999999998
+    },
+    {
+     "Ano": 2017,
+     "Mês": 7,
+     "Periodo": "20177",
+     "SELIC": 0.008,
+     "selic_acumulada": 0.5598999999999998
+    },
+    {
+     "Ano": 2017,
+     "Mês": 8,
+     "Periodo": "20178",
+     "SELIC": 0.008,
+     "selic_acumulada": 0.5518999999999998
+    },
+    {
+     "Ano": 2017,
+     "Mês": 9,
+     "Periodo": "20179",
+     "SELIC": 0.0064,
+     "selic_acumulada": 0.5454999999999999
+    },
+    {
+     "Ano": 2017,
+     "Mês": 10,
+     "Periodo": "201710",
+     "SELIC": 0.0064,
+     "selic_acumulada": 0.5390999999999999
+    },
+    {
+     "Ano": 2017,
+     "Mês": 11,
+     "Periodo": "201711",
+     "SELIC": 0.0057,
+     "selic_acumulada": 0.5333999999999999
+    },
+    {
+     "Ano": 2017,
+     "Mês": 12,
+     "Periodo": "201712",
+     "SELIC": 0.0054,
+     "selic_acumulada": 0.5279999999999999
+    },
+    {
+     "Ano": 2018,
+     "Mês": 1,
+     "Periodo": "20181",
+     "SELIC": 0.0058,
+     "selic_acumulada": 0.5221999999999999
+    },
+    {
+     "Ano": 2018,
+     "Mês": 2,
+     "Periodo": "20182",
+     "SELIC": 0.0047,
+     "selic_acumulada": 0.5174999999999998
+    },
+    {
+     "Ano": 2018,
+     "Mês": 3,
+     "Periodo": "20183",
+     "SELIC": 0.0053,
+     "selic_acumulada": 0.5121999999999999
+    },
+    {
+     "Ano": 2018,
+     "Mês": 4,
+     "Periodo": "20184",
+     "SELIC": 0.0052,
+     "selic_acumulada": 0.5069999999999999
+    },
+    {
+     "Ano": 2018,
+     "Mês": 5,
+     "Periodo": "20185",
+     "SELIC": 0.0052,
+     "selic_acumulada": 0.5017999999999999
+    },
+    {
+     "Ano": 2018,
+     "Mês": 6,
+     "Periodo": "20186",
+     "SELIC": 0.0052,
+     "selic_acumulada": 0.4965999999999999
+    },
+    {
+     "Ano": 2018,
+     "Mês": 7,
+     "Periodo": "20187",
+     "SELIC": 0.0054,
+     "selic_acumulada": 0.49119999999999986
+    },
+    {
+     "Ano": 2018,
+     "Mês": 8,
+     "Periodo": "20188",
+     "SELIC": 0.0057,
+     "selic_acumulada": 0.4854999999999999
+    },
+    {
+     "Ano": 2018,
+     "Mês": 9,
+     "Periodo": "20189",
+     "SELIC": 0.0047,
+     "selic_acumulada": 0.4807999999999999
+    },
+    {
+     "Ano": 2018,
+     "Mês": 10,
+     "Periodo": "201810",
+     "SELIC": 0.0054,
+     "selic_acumulada": 0.4753999999999999
+    },
+    {
+     "Ano": 2018,
+     "Mês": 11,
+     "Periodo": "201811",
+     "SELIC": 0.0049,
+     "selic_acumulada": 0.47049999999999986
+    },
+    {
+     "Ano": 2018,
+     "Mês": 12,
+     "Periodo": "201812",
+     "SELIC": 0.0049,
+     "selic_acumulada": 0.46559999999999985
+    },
+    {
+     "Ano": 2019,
+     "Mês": 1,
+     "Periodo": "20191",
+     "SELIC": 0.0054,
+     "selic_acumulada": 0.46019999999999983
+    },
+    {
+     "Ano": 2019,
+     "Mês": 2,
+     "Periodo": "20192",
+     "SELIC": 0.0049,
+     "selic_acumulada": 0.4552999999999998
+    },
+    {
+     "Ano": 2019,
+     "Mês": 3,
+     "Periodo": "20193",
+     "SELIC": 0.0047,
+     "selic_acumulada": 0.45059999999999983
+    },
+    {
+     "Ano": 2019,
+     "Mês": 4,
+     "Periodo": "20194",
+     "SELIC": 0.0052,
+     "selic_acumulada": 0.44539999999999985
+    },
+    {
+     "Ano": 2019,
+     "Mês": 5,
+     "Periodo": "20195",
+     "SELIC": 0.0054,
+     "selic_acumulada": 0.43999999999999984
+    },
+    {
+     "Ano": 2019,
+     "Mês": 6,
+     "Periodo": "20196",
+     "SELIC": 0.0047,
+     "selic_acumulada": 0.43529999999999985
+    },
+    {
+     "Ano": 2019,
+     "Mês": 7,
+     "Periodo": "20197",
+     "SELIC": 0.0057,
+     "selic_acumulada": 0.42959999999999987
+    },
+    {
+     "Ano": 2019,
+     "Mês": 8,
+     "Periodo": "20198",
+     "SELIC": 0.005,
+     "selic_acumulada": 0.42459999999999987
+    },
+    {
+     "Ano": 2019,
+     "Mês": 9,
+     "Periodo": "20199",
+     "SELIC": 0.0046,
+     "selic_acumulada": 0.4199999999999999
+    },
+    {
+     "Ano": 2019,
+     "Mês": 10,
+     "Periodo": "201910",
+     "SELIC": 0.0048,
+     "selic_acumulada": 0.41519999999999985
+    },
+    {
+     "Ano": 2019,
+     "Mês": 11,
+     "Periodo": "201911",
+     "SELIC": 0.0038,
+     "selic_acumulada": 0.4113999999999998
+    },
+    {
+     "Ano": 2019,
+     "Mês": 12,
+     "Periodo": "201912",
+     "SELIC": 0.0037,
+     "selic_acumulada": 0.40769999999999984
+    },
+    {
+     "Ano": 2020,
+     "Mês": 1,
+     "Periodo": "20201",
+     "SELIC": 0.0038,
+     "selic_acumulada": 0.4038999999999998
+    },
+    {
+     "Ano": 2020,
+     "Mês": 2,
+     "Periodo": "20202",
+     "SELIC": 0.0029,
+     "selic_acumulada": 0.4009999999999998
+    },
+    {
+     "Ano": 2020,
+     "Mês": 3,
+     "Periodo": "20203",
+     "SELIC": 0.0034,
+     "selic_acumulada": 0.3975999999999998
+    },
+    {
+     "Ano": 2020,
+     "Mês": 4,
+     "Periodo": "20204",
+     "SELIC": 0.0028,
+     "selic_acumulada": 0.39479999999999976
+    },
+    {
+     "Ano": 2020,
+     "Mês": 5,
+     "Periodo": "20205",
+     "SELIC": 0.0024,
+     "selic_acumulada": 0.39239999999999975
+    },
+    {
+     "Ano": 2020,
+     "Mês": 6,
+     "Periodo": "20206",
+     "SELIC": 0.0021,
+     "selic_acumulada": 0.39029999999999976
+    },
+    {
+     "Ano": 2020,
+     "Mês": 7,
+     "Periodo": "20207",
+     "SELIC": 0.0019,
+     "selic_acumulada": 0.38839999999999975
+    },
+    {
+     "Ano": 2020,
+     "Mês": 8,
+     "Periodo": "20208",
+     "SELIC": 0.0016,
+     "selic_acumulada": 0.38679999999999976
+    },
+    {
+     "Ano": 2020,
+     "Mês": 9,
+     "Periodo": "20209",
+     "SELIC": 0.0016,
+     "selic_acumulada": 0.38519999999999976
+    },
+    {
+     "Ano": 2020,
+     "Mês": 10,
+     "Periodo": "202010",
+     "SELIC": 0.0016,
+     "selic_acumulada": 0.3835999999999998
+    },
+    {
+     "Ano": 2020,
+     "Mês": 11,
+     "Periodo": "202011",
+     "SELIC": 0.0015,
+     "selic_acumulada": 0.3820999999999998
+    },
+    {
+     "Ano": 2020,
+     "Mês": 12,
+     "Periodo": "202012",
+     "SELIC": 0.0016,
+     "selic_acumulada": 0.3804999999999998
+    },
+    {
+     "Ano": 2021,
+     "Mês": 1,
+     "Periodo": "20211",
+     "SELIC": 0.0015,
+     "selic_acumulada": 0.3789999999999998
+    },
+    {
+     "Ano": 2021,
+     "Mês": 2,
+     "Periodo": "20212",
+     "SELIC": 0.0013,
+     "selic_acumulada": 0.37769999999999976
+    },
+    {
+     "Ano": 2021,
+     "Mês": 3,
+     "Periodo": "20213",
+     "SELIC": 0.002,
+     "selic_acumulada": 0.37569999999999976
+    },
+    {
+     "Ano": 2021,
+     "Mês": 4,
+     "Periodo": "20214",
+     "SELIC": 0.0021,
+     "selic_acumulada": 0.37359999999999977
+    },
+    {
+     "Ano": 2021,
+     "Mês": 5,
+     "Periodo": "20215",
+     "SELIC": 0.0027,
+     "selic_acumulada": 0.3708999999999998
+    },
+    {
+     "Ano": 2021,
+     "Mês": 6,
+     "Periodo": "20216",
+     "SELIC": 0.0031,
+     "selic_acumulada": 0.3677999999999998
+    },
+    {
+     "Ano": 2021,
+     "Mês": 7,
+     "Periodo": "20217",
+     "SELIC": 0.0036,
+     "selic_acumulada": 0.3641999999999998
+    },
+    {
+     "Ano": 2021,
+     "Mês": 8,
+     "Periodo": "20218",
+     "SELIC": 0.0043,
+     "selic_acumulada": 0.3598999999999998
+    },
+    {
+     "Ano": 2021,
+     "Mês": 9,
+     "Periodo": "20219",
+     "SELIC": 0.0044,
+     "selic_acumulada": 0.35549999999999976
+    },
+    {
+     "Ano": 2021,
+     "Mês": 10,
+     "Periodo": "202110",
+     "SELIC": 0.0049,
+     "selic_acumulada": 0.35059999999999975
+    },
+    {
+     "Ano": 2021,
+     "Mês": 11,
+     "Periodo": "202111",
+     "SELIC": 0.0059,
+     "selic_acumulada": 0.34469999999999973
+    },
+    {
+     "Ano": 2021,
+     "Mês": 12,
+     "Periodo": "202112",
+     "SELIC": 0.0077,
+     "selic_acumulada": 0.33699999999999974
+    },
+    {
+     "Ano": 2022,
+     "Mês": 1,
+     "Periodo": "20221",
+     "SELIC": 0.0073,
+     "selic_acumulada": 0.32969999999999977
+    },
+    {
+     "Ano": 2022,
+     "Mês": 2,
+     "Periodo": "20222",
+     "SELIC": 0.0076,
+     "selic_acumulada": 0.3220999999999998
+    },
+    {
+     "Ano": 2022,
+     "Mês": 3,
+     "Periodo": "20223",
+     "SELIC": 0.0093,
+     "selic_acumulada": 0.3127999999999998
+    },
+    {
+     "Ano": 2022,
+     "Mês": 4,
+     "Periodo": "20224",
+     "SELIC": 0.0083,
+     "selic_acumulada": 0.3044999999999998
+    },
+    {
+     "Ano": 2022,
+     "Mês": 5,
+     "Periodo": "20225",
+     "SELIC": 0.0103,
+     "selic_acumulada": 0.29419999999999985
+    },
+    {
+     "Ano": 2022,
+     "Mês": 6,
+     "Periodo": "20226",
+     "SELIC": 0.0102,
+     "selic_acumulada": 0.28399999999999986
+    },
+    {
+     "Ano": 2022,
+     "Mês": 7,
+     "Periodo": "20227",
+     "SELIC": 0.0103,
+     "selic_acumulada": 0.2736999999999999
+    },
+    {
+     "Ano": 2022,
+     "Mês": 8,
+     "Periodo": "20228",
+     "SELIC": 0.0117,
+     "selic_acumulada": 0.2619999999999999
+    },
+    {
+     "Ano": 2022,
+     "Mês": 9,
+     "Periodo": "20229",
+     "SELIC": 0.0107,
+     "selic_acumulada": 0.2512999999999999
+    },
+    {
+     "Ano": 2022,
+     "Mês": 10,
+     "Periodo": "202210",
+     "SELIC": 0.0102,
+     "selic_acumulada": 0.24109999999999993
+    },
+    {
+     "Ano": 2022,
+     "Mês": 11,
+     "Periodo": "202211",
+     "SELIC": 0.0102,
+     "selic_acumulada": 0.23089999999999994
+    },
+    {
+     "Ano": 2022,
+     "Mês": 12,
+     "Periodo": "202212",
+     "SELIC": 0.0112,
+     "selic_acumulada": 0.21969999999999995
+    },
+    {
+     "Ano": 2023,
+     "Mês": 1,
+     "Periodo": "20231",
+     "SELIC": 0.0112,
+     "selic_acumulada": 0.20849999999999996
+    },
+    {
+     "Ano": 2023,
+     "Mês": 2,
+     "Periodo": "20232",
+     "SELIC": 0.0092,
+     "selic_acumulada": 0.19929999999999998
+    },
+    {
+     "Ano": 2023,
+     "Mês": 3,
+     "Periodo": "20233",
+     "SELIC": 0.0117,
+     "selic_acumulada": 0.1876
+    },
+    {
+     "Ano": 2023,
+     "Mês": 4,
+     "Periodo": "20234",
+     "SELIC": 0.0092,
+     "selic_acumulada": 0.17839999999999998
+    },
+    {
+     "Ano": 2023,
+     "Mês": 5,
+     "Periodo": "20235",
+     "SELIC": 0.0112,
+     "selic_acumulada": 0.1672
+    },
+    {
+     "Ano": 2023,
+     "Mês": 6,
+     "Periodo": "20236",
+     "SELIC": 0.0107,
+     "selic_acumulada": 0.1565
+    },
+    {
+     "Ano": 2023,
+     "Mês": 7,
+     "Periodo": "20237",
+     "SELIC": 0.0107,
+     "selic_acumulada": 0.1458
+    },
+    {
+     "Ano": 2023,
+     "Mês": 8,
+     "Periodo": "20238",
+     "SELIC": 0.0114,
+     "selic_acumulada": 0.13440000000000002
+    },
+    {
+     "Ano": 2023,
+     "Mês": 9,
+     "Periodo": "20239",
+     "SELIC": 0.0097,
+     "selic_acumulada": 0.1247
+    },
+    {
+     "Ano": 2023,
+     "Mês": 10,
+     "Periodo": "202310",
+     "SELIC": 0.01,
+     "selic_acumulada": 0.11470000000000001
+    },
+    {
+     "Ano": 2023,
+     "Mês": 11,
+     "Periodo": "202311",
+     "SELIC": 0.0092,
+     "selic_acumulada": 0.10550000000000001
+    },
+    {
+     "Ano": 2023,
+     "Mês": 12,
+     "Periodo": "202312",
+     "SELIC": 0.0089,
+     "selic_acumulada": 0.0966
+    },
+    {
+     "Ano": 2024,
+     "Mês": 1,
+     "Periodo": "20241",
+     "SELIC": 0.0097,
+     "selic_acumulada": 0.0869
+    },
+    {
+     "Ano": 2024,
+     "Mês": 2,
+     "Periodo": "20242",
+     "SELIC": 0.008,
+     "selic_acumulada": 0.07890000000000001
+    },
+    {
+     "Ano": 2024,
+     "Mês": 3,
+     "Periodo": "20243",
+     "SELIC": 0.0083,
+     "selic_acumulada": 0.07060000000000001
+    },
+    {
+     "Ano": 2024,
+     "Mês": 4,
+     "Periodo": "20244",
+     "SELIC": 0.0089,
+     "selic_acumulada": 0.061700000000000005
+    },
+    {
+     "Ano": 2024,
+     "Mês": 5,
+     "Periodo": "20245",
+     "SELIC": 0.0083,
+     "selic_acumulada": 0.0534
+    },
+    {
+     "Ano": 2024,
+     "Mês": 6,
+     "Periodo": "20246",
+     "SELIC": 0.0079,
+     "selic_acumulada": 0.0455
+    },
+    {
+     "Ano": 2024,
+     "Mês": 7,
+     "Periodo": "20247",
+     "SELIC": 0.0091,
+     "selic_acumulada": 0.036399999999999995
+    },
+    {
+     "Ano": 2024,
+     "Mês": 8,
+     "Periodo": "20248",
+     "SELIC": 0.0087,
+     "selic_acumulada": 0.027699999999999995
+    },
+    {
+     "Ano": 2024,
+     "Mês": 9,
+     "Periodo": "20249",
+     "SELIC": 0.0084,
+     "selic_acumulada": 0.019299999999999998
+    },
+    {
+     "Ano": 2024,
+     "Mês": 10,
+     "Periodo": "202410",
+     "SELIC": 0.0093,
+     "selic_acumulada": 0.01
+    }
+   ]

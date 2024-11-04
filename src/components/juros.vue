@@ -41,7 +41,7 @@
                 v-money="moneyOptions"
                 v-model="dados.principal"
                 prepend-inner-icon="mdi-currency-usd"
-                :rules="[rules.required, rules.requiprincipal]"
+                :rules="[rules.required, rules.requiprincipal, rules.menorquezero]"
                 clearable
               ></v-text-field>
             </v-col>
@@ -55,7 +55,7 @@
                 v-model="dados.juros"
                 prepend-inner-icon="mdi-currency-usd"
                 clearable
-                hide-details
+                :rules="[rules.menorquezero]"
               ></v-text-field>
             </v-col>
             <v-col cols="12" sm="4">
@@ -68,12 +68,13 @@
                 v-model="dados.multa"
                 prepend-inner-icon="mdi-currency-usd"
                 clearable
+                :rules="[rules.menorquezero]"
               ></v-text-field>
             </v-col>
             <span class="animate" style="background: #121212; --i:6;"></span>
           </v-row>
           <div class="mb-5 pa-2 text-center" style="background: #4B5563;">
-            <span class="text-grey">Valor Total do Débito: </span><b class="text-white">{{ formatarParaReal(valor_debito) }}</b> 
+            <span class="text-grey">Valor Total do Débito: </span><b class="text-white">{{ formatarParaReal(valor_debito) }}</b>
           </div>
           <v-row style="position: relative">
             <v-col cols="12" sm="4">
@@ -96,7 +97,7 @@
                 v-model="dados.date_calculo"
                 prepend-inner-icon="mdi-calendar"
                 type="date"
-                :rules="[rules.required ]"
+                :rules="[rules.required]"
                 clearable
               ></v-text-field>
             </v-col>
@@ -122,6 +123,7 @@
                   prepend-inner-icon="mdi-percent"
                   clearable
                   v-mask="['###,##', '##,##', '#,##']"
+                  :rules="[rules.menorquezero]"
                 ></v-text-field>
                 <v-chip-group
                   selected-class="text-success"
@@ -143,6 +145,7 @@
                   prepend-inner-icon="mdi-percent"
                   clearable
                   v-mask="['###,##', '##,##', '#,##']"
+                  :rules="[rules.menorquezero]"
                 ></v-text-field>
                 <v-chip-group
                   selected-class="text-success"
@@ -220,7 +223,7 @@
 import { ref, watch } from 'vue'
 import { mask } from 'vue-the-mask'
 import {VMoney} from 'v-money'
-import selic from './../../public/selic.json';
+import selic from '../selic.json';
 import { computed } from 'vue';
 
 const form = ref(null)
@@ -237,7 +240,8 @@ const scrollToElement = (item) => {
 const rules = {
     required: value => !!value || "campo obrigatório",
     minfield: (v) => (v||'').length >= 3 || "Mínimo 4 caracteres",
-    requiprincipal: (v) =>  v != 'R$ 0,00' || "campo não pode ser zero."
+    requiprincipal: (v) =>  v != 'R$ 0,00' || "campo não pode ser zero.",
+    menorquezero: (v) =>  !v.includes('-') || "campo não pode ser menor que zero.",
 }
 
 const moneyOptions = {
@@ -319,13 +323,19 @@ const calcular = async () => {
           selic_acumulada.value = 0.00
           scrollToElement('resultado')
           return
-        } 
+        }
         if(datasIguais()) um_por_cento.value = false
         result.value= true
-        const start = datam(dados.value.date_vcmto ).split('-').map(item => parseInt(item)).slice(0,2).join('')
-        const end = datam(dados.value.date_calculo ).split('-').map(item => parseInt(item)).slice(0,2).join('')
+        const start = datam(dados.value.date_vcmto )
+                      .split('-').map(item => parseInt(item)).slice(0,2).join('')
+        const end = datam(dados.value.date_calculo )
+                    .split('-').map(item => parseInt(item)).slice(0,2).join('')
+
+
         const acum1 = selic.find(x => x.Periodo == start).selic_acumulada
         const acum2 = selic.find(x => x.Periodo == end).selic_acumulada
+
+        console.log(start, end)
 
         selic_acumulada.value = acum1 - acum2
         scrollToElement('resultado')
