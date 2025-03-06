@@ -16,8 +16,8 @@
             <span class="animate" style="background: #121212; --i:3;"></span>
           </div>
           <div class="tabs" style="position: relative">
-            <!-- <input @click="tab = 1" type="radio" id="ipva" name="tabs">
-            <label for="ipva">IPVA</label> -->
+            <input @click="tab = 1" type="radio" id="ipva" name="tabs">
+            <label for="ipva">IPVA</label>
             <!-- <input @click="tab = 2" type="radio" id="itcd" name="tabs">
             <label for="itcd">ITCD</label> -->
             <input @click="tab = 3" type="radio" id="juros" name="tabs" checked>
@@ -25,11 +25,11 @@
             <span class="animate" style="background: #121212; --i:4;"></span>
           </div>
         </div>
-        <div class="mb-5" style="position: relative">
+        <!-- <div class="mb-5" style="position: relative">
           <h2 class="d-flex align-center"><v-icon size="1.5rem" class="mr-2">mdi-calculator</v-icon>Calculadora de débito</h2>
           <small class="text-caption">Selic atualizada em 25/10/2024.</small>
           <span class="animate" style="background: #121212; --i:5;"></span>
-        </div>
+        </div> -->
         <v-form @submit.prevent="calcular()" ref="form">
           <v-row style="position: relative">
             <v-col cols="12" sm="4">

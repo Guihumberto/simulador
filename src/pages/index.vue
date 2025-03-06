@@ -1,6 +1,6 @@
 <template>
-  <!-- <HelloWorld /> -->
-  <juros />
+  <HelloWorld />
+  <!-- <juros /> -->
 </template>
 
 <script setup>
