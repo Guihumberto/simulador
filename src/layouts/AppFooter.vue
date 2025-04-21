@@ -1,6 +1,6 @@
 <template>
   <v-footer height="40" class="footerv" app>
-    <small class="firsttext">Desenvolvido Internamente pela COTEC/SEFAZ-MA</small>
+    <small class="firsttext">Desenvolvido por AMHPK.</small>
 
     <div
       class="text-caption text-disabled"
@@ -14,7 +14,7 @@
         rel="noopener noreferrer"
         target="_blank"
       >
-          SEFAZ/MA
+          SEFAZ
       </a>
     </div>
   </v-footer>

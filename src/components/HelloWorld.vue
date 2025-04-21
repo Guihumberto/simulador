@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="containerr">
     <div class="wrapper_content">
       <div class="imgInit" :class="efeito ? 'upDIv':''">
         <img
@@ -44,7 +44,9 @@
           </div>
         </div>
 
+        
         <div class="tab-content-1" v-if="tab == 1">
+          <!-- Mudar o ano de referencia -->
           <div class="d-flex align-center">
             <v-icon>mdi-car-multiple</v-icon>
             <h2 class="mx-2">IPVA {{ anoSelect }}</h2>
@@ -62,6 +64,8 @@
               </v-btn>
             </v-btn-toggle>
           </div>
+
+          <!-- Primeira Fileira -->
           <div class="wrapperbox">
             <div class="box">
               <div class="box-item">
@@ -86,6 +90,7 @@
             </div>
           </div>
 
+          <!-- Segunda Fileira -->
           <div class="graficWrapper">
             <div class="grafic">
               <div class="d-flex align-center">
@@ -132,6 +137,8 @@
               </div>
             </div>
           </div>
+
+          <!-- SImulador -->
 
           <div class="simulador">
             <!-- lista de tipos de veículos -->
@@ -219,10 +226,14 @@
             </v-alert>
           </div>
         </div>
+
+        <!-- Não Utilizado -->
         <div class="tab-content-2" v-if="tab == 2">
           <h2>ITCD</h2>
           <div class="content_itcd"></div>
         </div>
+
+
         <!-- reusultado -->
         <div class="resultado" v-if="tab == 1">
         <h3 class="mb-2"><v-icon size="1.3rem" class="mr-1">mdi-list-box</v-icon>Resultado da Simulação</h3>
@@ -296,6 +307,8 @@
           </div>
         </div>
         </div>
+
+        <!-- Juros simulação -->
         <div class="tab-content-3" v-if="tab == 3">
            <h2 class="d-flex align-center"><v-icon size="1.5rem" class="mr-2">mdi-calculator</v-icon>Calculadora de débito</h2>
           <small class="text-caption">Selic atualizada em 25/10/2024.</small>
@@ -582,7 +595,7 @@
 </script>
 
 <style>
-.container{
+.containerr{
   min-height: 80vh;
   margin-top: 3rem;
   display: flex;
