@@ -2,9 +2,11 @@
   <v-app :theme="theme ? 'dark':'light'" class="app-layout">
     <AppHeader />
     <v-main class="main-content">
-      <v-fade-transition mode="slide-left">
-        <router-view />
-      </v-fade-transition>
+      <router-view v-slot="{ Component }">
+        <transition name="fade">
+          <component :is="Component" />
+        </transition>
+      </router-view>
     </v-main>
     <AppFooter />
   </v-app>
